@@ -18,14 +18,4 @@ echo theo:3008 | chpasswd
 usermod -aG root theo
 usermod -aG wheel theo
 
-umount /.snapshots
-rm -r /.snapshots
-snapper -c root create-config /
-btrfs subvolume delete /.snapshots
-mkdir /.snapshots
-mount -a
-chmod 750 /.snapshots
-chown -R :wheel /.snapshots
-
-
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
