@@ -20,7 +20,7 @@ usermod -aG wheel theo
 
 umount /.snapshots
 rm -r /.snapshots
-snapper --no-dbus -c root create-config /
+snapper -c root create-config /
 btrfs subvolume delete /.snapshots
 mkdir /.snapshots
 mount -a
