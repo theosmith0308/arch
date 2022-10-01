@@ -33,7 +33,6 @@ GRUB_BTRFS_GRUB_DIRNAME="/efi/grub"
 #Save and exit file
 
 chown -R :wheel /.snapshots
-chmod 750 /.snapshots
 
 #Exit root
 Exit
@@ -43,7 +42,7 @@ SU
 cd /
 
 systemctl enable --now grub-btrfs.path
-grub-mkconfig -o /boot/grub/grub.cfg
+grub-mkconfig -o /efi/grub/grub.cfg
 
 systemctl enable --now snapper-timeline.timer
 systemctl enable --now snapper-cleanup.timer
@@ -52,7 +51,7 @@ systemctl enable --now snapper-cleanup.timer
 snapper -c root create -d "***Base System Configuration***"
 
 #Now sync with grub
-grub-mkconfig -o /boot/grub/grub.cfg
+grub-mkconfig -o /efi/grub/grub.cfg
 
 #Exit root
 Exit
