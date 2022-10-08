@@ -85,6 +85,7 @@ os-prober
 p7zip
 packagekit
 pacman-contrib
+perl-rename
 pipewire
 pipewire-docs
 pipewire-alsa
