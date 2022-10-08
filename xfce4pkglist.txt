@@ -10,7 +10,7 @@ gvfs-nfs
 gvfs-smb
 lightdm
 lightdm-gtk-greeter
-lightdm-slick-greeter
+lightdm-gtk-greeter-settings
 meld
 parole
 ristretto
