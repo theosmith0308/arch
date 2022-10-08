@@ -1,8 +1,8 @@
 #!/bin/bash
 
-grub-install --target=x86_64-efi --efi-directory=/efi --boot-directory=/efi --bootloader-id=Arch
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
 
-grub-mkconfig -o /efi/grub/grub.cfg
+grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager
 #systemctl enable bluetooth
