@@ -15,7 +15,6 @@ echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 echo root:3008 | chpasswd
 useradd -m theo
 echo theo:3008 | chpasswd
-usermod -aG root theo
 usermod -aG wheel theo
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
