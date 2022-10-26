@@ -34,6 +34,8 @@ fsarchiver
 git
 glances
 gnu-netcat
+grub
+grub-btrfs
 gst-libav
 gst-plugin-pipewire
 gst-plugins-bad
