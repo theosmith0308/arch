@@ -17,7 +17,6 @@ ristretto
 thunar-archive-plugin
 thunar-media-tags-plugin
 xarchiver
-xcursor-neutral
 xdg-user-dirs-gtk
 xed
 xfce4
