@@ -19,7 +19,7 @@ systemctl enable firewalld
 systemctl enable acpid
 systemctl enable pipewire.service
 systemctl enable pipewire-pulse.service
-systemctl enable gdm/sddm/lightdm.service #choose display server installed
+systemctl enable gdm/sddm/lightdm.service # Choose display server installed
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
 
