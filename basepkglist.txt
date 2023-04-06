@@ -52,6 +52,7 @@ iwd
 libdvdcss
 libgsf
 libopenraw
+libpulse
 libwnck3
 linux-headers
 lsscsi
@@ -125,6 +126,7 @@ wget
 whois
 wireless_tools
 wireless-regdb
+wireplumber
 wpa_supplicant
 xdg-user-dirs
 xdg-utils
