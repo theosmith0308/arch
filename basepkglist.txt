@@ -16,6 +16,7 @@ cantarell-fonts
 cups
 dhclient
 dialog
+dkms
 dmidecode
 dmraid
 dnsmasq
