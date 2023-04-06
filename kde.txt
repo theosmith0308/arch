@@ -4,6 +4,8 @@ openssh
 htop
 wget
 iwd
+sddm
+sddm-kcm
 wireless_tools
 wpa_supplicant
 smartmontools
