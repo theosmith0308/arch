@@ -1,0 +1,15 @@
+Fist run
+bootctl --path=/boot install
+
+Then
+vim /boot/loader/entries/arch.conf
+
+Enter the following
+
+title   Arch
+linux   /vmlinuz-linux
+initrd  /initramfs-linux.img
+initrd  /intel-ucode.img
+
+Then save and exit
+
