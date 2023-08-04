@@ -11,8 +11,10 @@ avahi
 b43-fwcutter
 base-devel
 bash-completion
-broadcom-wl
+broadcom-wl-dkms
+btrfs-progs
 cantarell-fonts
+capitaine-cursors
 cups
 dhclient
 dialog
@@ -27,7 +29,6 @@ ethtool
 ffmpeg
 ffmpegthumbnailer
 findutils
-firefox
 firewalld
 freetype2
 fsarchiver
