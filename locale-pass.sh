@@ -12,9 +12,9 @@ echo "arch" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
-echo root:3008 | chpasswd
+echo root:ts | chpasswd
 useradd -m theo
-echo theo:3008 | chpasswd
+echo theo:ts | chpasswd
 usermod -aG wheel theo
 
 printf "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
