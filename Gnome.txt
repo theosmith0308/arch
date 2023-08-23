@@ -27,7 +27,7 @@ gnome-shell-extensions
 gnome-system-monitor
 gnome-text-editor
 gnome-tweaks
-gnome-user-docs 	
+gnome-user-docs
 gnome-user-share
 grilo-plugins
 gvfs
@@ -38,7 +38,7 @@ gvfs-gphoto2
 gvfs-mtp
 gvfs-nfs
 gvfs-smb
-nautilus 	
+nautilus
 rygel
 sushi
 xdg-desktop-portal-gnome
