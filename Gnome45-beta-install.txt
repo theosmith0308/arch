@@ -1,0 +1,12 @@
+sudo pacman-key --keyserver hkps://keys.openpgp.org --recv-keys 6E58E886A8E07538A2485FAED6A4F386B4881229
+
+sudo pacman-key --lsign-key 6E58E886A8E07538A2485FAED6A4F386B4881229
+
+sudo pacman -U https://br-mirror.amanoteam.com/fcgu/fcgu-mirrorlist-4-2-any.pkg.tar.zst
+
+Once that mirror-list package is installed, you need to edit the /etc/pacman.conf file with nano or vim and add Fabian Bornschein’s repository listed below above Arch Linux’s [core] repository.
+
+[fcgu]
+Include = /etc/pacman.d/fcgu-mirrorlist
+
+That’s it! All you have to do now is to update your Arch Linux system by running the sudo pacman -Syu 
