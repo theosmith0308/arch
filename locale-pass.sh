@@ -3,10 +3,8 @@
 ln -sf /usr/share/zoneinfo/Africa/Windhoek /etc/localtime
 hwclock --systohc
 pacman -S --noconfirm pacman-contrib
-cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-rankmirrors /etc/pacman.d/mirrorlist.bak > /etc/pacman.d/mirrorlist
 pacman -S --noconfirm reflector
-reflector --country 'South Africa' --latest 6 --sort rate --save /etc/pacman.d/mirrorlist
+reflector -c ZA -c US -c GB --latest 15 --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Sy
 sed -i 's/#\(en_US\.UTF-8\)/\1/' /etc/locale.gen
 locale-gen
