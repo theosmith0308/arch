@@ -7,4 +7,5 @@ iwd
 wireless_tools
 wpa_supplicant
 smartmontools
+xdg-user-dirs
 xdg-utils
