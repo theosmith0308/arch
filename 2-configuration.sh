@@ -20,6 +20,11 @@ ln -sf /usr/share/zoneinfo/$zoneinfo /etc/localtime
 hwclock --systohc
 
 # ------------------------------------------------------
+# Install reflector
+# ------------------------------------------------------
+pacman -S reflector pacman-contrib
+
+# ------------------------------------------------------
 # Update reflector
 # ------------------------------------------------------
 echo "Start reflector..."
@@ -33,7 +38,7 @@ pacman -Syy
 # ------------------------------------------------------
 # Install Packages
 # ------------------------------------------------------
-pacman --noconfirm --needed -S - < basepkglist.txt
+"yes | pacman --needed -S - < basepkglist.txt"
 # ------------------------------------------------------
 # set lang utf8 US
 # ------------------------------------------------------
