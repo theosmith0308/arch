@@ -37,8 +37,8 @@ while true; do
         * ) echo "Please answer yes or no.";;
     esac
 done
-git clone https://aur.archlinux.org/yay-git.git
-cd yay-git
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
 makepkg -si
 
 echo "DONE!"
