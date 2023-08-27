@@ -59,25 +59,24 @@ clear
 # ------------------------------------------------------
 # Set Root Password
 # ------------------------------------------------------
-echo "Set root password"
-passwd ts
+echo root:ts | chpasswd
 
 # ------------------------------------------------------
 # Add User
 # ------------------------------------------------------
 echo "Add user $username"
 useradd -m -G wheel $username
-passwd $username
+echo theo:ts | chpasswd
 
 # ------------------------------------------------------
 # Enable Services
 # ------------------------------------------------------
 systemctl enable NetworkManager
-systemctl enable bluetooth
-systemctl enable cups.service
+#systemctl enable bluetooth
+#systemctl enable cups.service
 systemctl enable sshd
 systemctl enable avahi-daemon
-systemctl enable reflector.timer
+#systemctl enable reflector.timer
 systemctl enable fstrim.timer
 systemctl enable firewalld
 systemctl enable acpid
@@ -85,7 +84,7 @@ systemctl enable acpid
 # ------------------------------------------------------
 # Grub installation
 # ------------------------------------------------------
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB --removable
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch --removable
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # ------------------------------------------------------
