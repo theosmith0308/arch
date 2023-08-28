@@ -22,7 +22,7 @@ hwclock --systohc
 # ------------------------------------------------------
 # Install reflector
 # ------------------------------------------------------
-pacman -S reflector pacman-contrib
+pacman -S --noconfirm reflector pacman-contrib
 
 # ------------------------------------------------------
 # Update reflector
@@ -38,7 +38,8 @@ pacman -Syy
 # ------------------------------------------------------
 # Install Packages
 # ------------------------------------------------------
-yes | pacman -S --noconfirm --needed - < basepkglist.txt
+pacman -R --noconfirm broadcom-wl
+pacman -S --noconfirm --needed - < basepkglist.txt
 # ------------------------------------------------------
 # set lang utf8 US
 # ------------------------------------------------------
