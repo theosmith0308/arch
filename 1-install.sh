@@ -75,6 +75,9 @@ cp 4-zram.sh /mnt/archinstall/
 cp 5-timeshift.sh /mnt/archinstall/
 cp 6-preload.sh /mnt/archinstall/
 cp snapshot.sh /mnt/archinstall/
+cp desktop.txt /mnt/archinstall/
+cp gnome.txt /mnt/archinstall/
+cp pipewire.txt /mnt/archinstall/
 
 # ------------------------------------------------------
 # Chroot to installed sytem
