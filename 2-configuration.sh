@@ -38,7 +38,6 @@ pacman -Syy
 # ------------------------------------------------------
 # Install Packages
 # ------------------------------------------------------
-pacman -R --noconfirm broadcom-wl
 pacman -S --noconfirm --needed - < basepkglist.txt
 # ------------------------------------------------------
 # set lang utf8 US
