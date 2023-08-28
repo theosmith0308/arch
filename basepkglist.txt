@@ -9,7 +9,7 @@ b43-fwcutter
 base-devel
 bind
 brltty
-broadcom-wl-dkms
+broadcom-wl
 btrfs-progs
 capitaine-cursors
 clonezilla
