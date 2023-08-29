@@ -89,6 +89,7 @@ cat /mnt/etc/fstab
 # ------------------------------------------------------
 
 mkdir /mnt/archinstall
+cp 02-configuration.sh /mnt/archinstall/
 cp 2-configuration.sh /mnt/archinstall/
 cp 3-yay.sh /mnt/archinstall/
 cp 4-zram.sh /mnt/archinstall/
