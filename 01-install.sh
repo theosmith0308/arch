@@ -88,7 +88,7 @@ cat /mnt/etc/fstab
 # Install configuration scripts
 # ------------------------------------------------------
 
-mkdir /mnt/archinstall
+mkdir -p /mnt/archinstall
 cp 02-configuration.sh /mnt/archinstall/
 cp 2-configuration.sh /mnt/archinstall/
 cp 3-yay.sh /mnt/archinstall/
