@@ -71,7 +71,7 @@ cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 # Setting up $iso mirrors for faster download
 # ------------------------------------------------------
 
-reflector -a 48 -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
+reflector -c ZA -c DE -c GB -c US -a 48 -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
 
 # ------------------------------------------------------
 # Install base packages
