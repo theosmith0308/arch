@@ -32,4 +32,8 @@ sudo pacman -S --noconfirm --needed baobab dconf-editor eog evince file-roller g
 # -----------------------------------------------------
 sudo systemctl enable gdm
 
-echo "DONE!"
+echo "Done rebooting into Gnome"
+echo "Rebooting in 3 Seconds ..." && sleep 1
+echo "Rebooting in 2 Seconds ..." && sleep 1
+echo "Rebooting in 1 Second ..." && sleep 1
+reboot now
