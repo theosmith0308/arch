@@ -25,7 +25,7 @@ hwclock --systohc
 # ------------------------------------------------------
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 sed -i 's/ParallelDownloads = 5/ParallelDownloads = 2/' /etc/pacman.conf
-pacman -S --noconfirm --needed reflector rsync
+# pacman -S --noconfirm --needed reflector rsync
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 
 # ------------------------------------------------------
