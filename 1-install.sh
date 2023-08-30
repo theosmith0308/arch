@@ -88,7 +88,7 @@ cat /mnt/etc/fstab
 # ------------------------------------------------------
 mkdir /mnt/archinstall
 cp 2-configuration.sh /mnt/archinstall/
-cp 3-basepkglist.txt /mnt/archinstall/
+cp 3-basepkglist /mnt/archinstall/
 cp 4-yay.sh /mnt/archinstall/
 cp 5-zram.sh /mnt/archinstall/
 cp 6-timeshift.sh /mnt/archinstall/
