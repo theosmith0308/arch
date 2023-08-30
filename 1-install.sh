@@ -87,12 +87,12 @@ cat /mnt/etc/fstab
 # Install configuration scripts
 # ------------------------------------------------------
 cp 02-configuration.sh /mnt/archroot/
-cp 3-yay.sh /mnt/archroot/
-cp 4-zram.sh /mnt/archroot/
-cp 5-timeshift.sh /mnt/archroot/
-cp 6-preload.sh /mnt/archroot/
-cp 7-gnome.sh /mnt/archroot/
-cp 8-basepkglist.txt /mnt/archroot/
+cp 3-basepkglist.txt /mnt/archroot/
+cp 4-yay.sh /mnt/archroot/
+cp 5-zram.sh /mnt/archroot/
+cp 6-timeshift.sh /mnt/archroot/
+cp 7-preload.sh /mnt/archroot/
+cp 8-gnome.sh /mnt/archroot/
 cp 9-snapshot.sh /mnt/archroot/
 
 # ------------------------------------------------------
