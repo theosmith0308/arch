@@ -1,8 +1,0 @@
-plasma-meta
-konsole
-kwrite
-dolphin
-ark
-sddm
-plasma-wayland-session
-egl-wayland
