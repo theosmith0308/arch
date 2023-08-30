@@ -46,7 +46,7 @@ btrfs su cr /mnt/@images
 umount /mnt
 
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda2 /mnt
-mkdir -p /mnt/{boot/efi,home,var/log,var/cache/pacman/pkg,var/lib/libvirt/images,archinstall}
+mkdir -p /mnt/{boot/efi,home,var/log,var/cache/pacman/pkg,var/lib/libvirt/images}
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@home /dev/$sda2 /mnt/home
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/$sda2 /mnt/var/log
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@pkg /dev/$sda2 /mnt/var/cache/pacman/pkg
@@ -86,6 +86,7 @@ cat /mnt/etc/fstab
 # ------------------------------------------------------
 # Install configuration scripts
 # ------------------------------------------------------
+mkdir /mnt/archinstall
 cp 2-configuration.sh /mnt/archinstall/
 cp 3-basepkglist.txt /mnt/archinstall/
 cp 4-yay.sh /mnt/archinstall/
