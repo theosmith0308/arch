@@ -44,6 +44,7 @@ grml-zsh-config
 grub
 grub-btrfs
 hdparm
+htop
 hyperv
 intel-ucode
 irssi
@@ -125,11 +126,13 @@ usbutils
 vim
 vpnc
 wezterm-terminfo
+wget
 wireless-regdb
 wireless_tools
 wpa_supplicant
 wvdial
 xdg-user-dirs
+xdg-utils
 xfsprogs
 xl2tpd
 zsh
