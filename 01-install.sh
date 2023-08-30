@@ -97,7 +97,7 @@ cat /mnt/etc/fstab
 
 # mkdir -p /mnt/archinstall
 cp 02-configuration.sh /mnt/archroot/
-cp 2-configuration.sh /mnt/archroot/
+# cp 2-configuration.sh /mnt/archroot/
 cp 3-yay.sh /mnt/archroot/
 cp 4-zram.sh /mnt/archroot/
 cp 5-timeshift.sh /mnt/archroot/
