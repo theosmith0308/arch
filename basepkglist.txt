@@ -32,6 +32,8 @@ ethtool
 exfatprogs
 f2fs-tools
 fatresize
+firefox
+firefox-ublock-origin
 foot-terminfo
 fsarchiver
 gnu-netcat
