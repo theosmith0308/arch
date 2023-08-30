@@ -46,7 +46,7 @@ btrfs su cr /mnt/@images
 umount /mnt
 
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda2 /mnt
-mkdir -p /mnt/{boot/efi,home,var/log,var/cache/pacman/pkg,var/lib/libvirt/images,archroot}
+mkdir -p /mnt/{boot/efi,home,var/log,var/cache/pacman/pkg,var/lib/libvirt/images}
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@home /dev/$sda2 /mnt/home
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/$sda2 /mnt/var/log
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@pkg /dev/$sda2 /mnt/var/cache/pacman/pkg
@@ -65,35 +65,36 @@ setfont ter-v20b
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 sed -i 's/ParallelDownloads = 5/ParallelDownloads = 2/' /etc/pacman.conf
 pacman -S --noconfirm --needed reflector rsync
-cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+# cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 
 # ------------------------------------------------------
 # Run reflector to update mirrorlist
 # ------------------------------------------------------
-reflector -c GB -c DE --sort rate -l 10 --save /etc/pacman.d/mirrorlist
+# reflector -c GB -c DE --sort rate -l 10 --save /etc/pacman.d/mirrorlist
+pacman -Sy
 
 # ------------------------------------------------------
 # Install base packages
 # ------------------------------------------------------
-pacstrap -K /mnt base base-devel linux linux-firmware intel-ucode git vim reflector rsync openssh
+pacstrap -K /mnt base base-devel linux linux-firmware intel-ucode btrfs-progs git vim reflector rsync pacman-contrib openssh
 
 # ------------------------------------------------------
 # Generate fstab
 # ------------------------------------------------------
 genfstab -U /mnt >> /mnt/etc/fstab
-# cat /mnt/etc/fstab
+cat /mnt/etc/fstab
 
 # ------------------------------------------------------
 # Copy configuration scripts
 # ------------------------------------------------------
-mkdir /mnt/archinstall
-cp arch/* /mnt/archinstall/
+# mkdir /mnt/archinstall
+# cp arch/* /mnt/archinstall/
 
 # ------------------------------------------------------
 # Chroot to installed sytem
 # ------------------------------------------------------
-arch-chroot /mnt
-echo "cd into archinstall and install basepackages and grub"
+# arch-chroot /mnt
+# echo "cd into archinstall and install basepackages and grub"
 
 
 
