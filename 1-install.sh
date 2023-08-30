@@ -46,7 +46,7 @@ btrfs su cr /mnt/@images
 umount /mnt
 
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda2 /mnt
-mkdir -p /mnt/{boot/efi,home,var/log,var/cache/pacman/pkg,var/lib/libvirt/images,archroot}
+mkdir -p /mnt/{boot/efi,home,var/log,var/cache/pacman/pkg,var/lib/libvirt/images,archinstall}
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@home /dev/$sda2 /mnt/home
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/$sda2 /mnt/var/log
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@pkg /dev/$sda2 /mnt/var/cache/pacman/pkg
@@ -86,19 +86,19 @@ cat /mnt/etc/fstab
 # ------------------------------------------------------
 # Install configuration scripts
 # ------------------------------------------------------
-cp 2-configuration.sh /mnt/archroot/
-cp 3-basepkglist.txt /mnt/archroot/
-cp 4-yay.sh /mnt/archroot/
-cp 5-zram.sh /mnt/archroot/
-cp 6-timeshift.sh /mnt/archroot/
-cp 7-preload.sh /mnt/archroot/
-cp 8-gnome.sh /mnt/archroot/
-cp 9-snapshot.sh /mnt/archroot/
+cp 2-configuration.sh /mnt/archinstall/
+cp 3-basepkglist.txt /mnt/archinstall/
+cp 4-yay.sh /mnt/archinstall/
+cp 5-zram.sh /mnt/archinstall/
+cp 6-timeshift.sh /mnt/archinstall/
+cp 7-preload.sh /mnt/archinstall/
+cp 8-gnome.sh /mnt/archinstall/
+cp 9-snapshot.sh /mnt/archinstall/
 
 # ------------------------------------------------------
 # Chroot to installed sytem
 # ------------------------------------------------------
-arch-chroot /mnt ./archroot/2-configuration.sh
+arch-chroot /mnt ./archinstall/2-configuration.sh
 
 
 
