@@ -86,7 +86,7 @@ cat /mnt/etc/fstab
 # ------------------------------------------------------
 # Install configuration scripts
 # ------------------------------------------------------
-cp 02-configuration.sh /mnt/archroot/
+cp 2-configuration.sh /mnt/archroot/
 cp 3-basepkglist.txt /mnt/archroot/
 cp 4-yay.sh /mnt/archroot/
 cp 5-zram.sh /mnt/archroot/
