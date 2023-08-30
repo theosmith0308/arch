@@ -92,8 +92,8 @@ cp 4-zram.sh /mnt/archroot/
 cp 5-timeshift.sh /mnt/archroot/
 cp 6-preload.sh /mnt/archroot/
 cp 7-gnome.sh /mnt/archroot/
-cp snapshot.sh /mnt/archroot/
-cp basepkglist.txt /mnt/archroot/
+cp 8-basepkglist.txt /mnt/archroot/
+cp 9-snapshot.sh /mnt/archroot/
 
 # ------------------------------------------------------
 # Chroot to installed sytem
