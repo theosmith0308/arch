@@ -42,7 +42,7 @@ pacman -Syy
 # ------------------------------------------------------
 # Install Packages
 # ------------------------------------------------------
-pacman -S --noconfirm --needed - < 3-basepkglist.txt
+pacman -S --noconfirm --needed - < 3-basepkglist
 
 # ------------------------------------------------------
 # set lang utf8 US
