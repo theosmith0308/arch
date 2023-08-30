@@ -124,6 +124,7 @@ cp /archroot/6-timeshift.sh /home/$username/scripts
 cp /archroot/7-preload.sh /home/$username/scripts
 cp /archroot/8-gnome.sh /home/$username/scripts
 cp /archroot/9-snapshot.sh /home/$username/scripts
+cp /archroot/10-pipewire /home/$username/scripts
 
 clear
 echo "     _                   "
