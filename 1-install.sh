@@ -87,8 +87,8 @@ cat /mnt/etc/fstab
 # ------------------------------------------------------
 # Copy configuration scripts
 # ------------------------------------------------------
-# mkdir /mnt/archinstall
-# cp arch/* /mnt/archinstall/
+mkdir /mnt/archinstall
+cp -r ./ /mnt/archinstall/
 
 # ------------------------------------------------------
 # Chroot to installed sytem
