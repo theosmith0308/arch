@@ -110,9 +110,7 @@ cp basepkglist.txt /mnt/archroot/
 # Chroot to installed sytem
 # ------------------------------------------------------
 
-arch-chroot /mnt
-cd archroot/
-./02-configuration.sh
+arch-chroot /mnt ./archroot/02-configuration.sh
 
 
 
