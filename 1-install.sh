@@ -95,6 +95,7 @@ cp 6-timeshift.sh /mnt/archinstall/
 cp 7-preload.sh /mnt/archinstall/
 cp 8-gnome.sh /mnt/archinstall/
 cp 9-snapshot.sh /mnt/archinstall/
+cp 10-pipewire /mnt/archinstall/
 
 # ------------------------------------------------------
 # Chroot to installed sytem
