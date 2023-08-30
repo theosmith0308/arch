@@ -98,7 +98,7 @@ cp 9-snapshot.sh /mnt/archroot/
 # ------------------------------------------------------
 # Chroot to installed sytem
 # ------------------------------------------------------
-arch-chroot /mnt ./archroot/02-configuration.sh
+arch-chroot /mnt ./archroot/2-configuration.sh
 
 
 
