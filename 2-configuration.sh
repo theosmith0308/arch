@@ -118,12 +118,12 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: A
 # Copy installation scripts to home directory 
 # ------------------------------------------------------
 mkdir -p /home/$username/scripts
-cp /archroot/3-yay.sh /home/$username/scripts
-cp /archroot/4-zram.sh /home/$username/scripts
-cp /archroot/5-timeshift.sh /home/$username/scripts
-cp /archroot/6-preload.sh /home/$username/scripts
-cp /archroot/7-gnome.sh /home/$username/scripts
-cp /archroot/snapshot.sh /home/$username/scripts
+cp /archroot/4-yay.sh /home/$username/scripts
+cp /archroot/5-zram.sh /home/$username/scripts
+cp /archroot/6-timeshift.sh /home/$username/scripts
+cp /archroot/7-preload.sh /home/$username/scripts
+cp /archroot/8-gnome.sh /home/$username/scripts
+cp /archroot/9-snapshot.sh /home/$username/scripts
 
 clear
 echo "     _                   "
