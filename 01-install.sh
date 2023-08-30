@@ -17,6 +17,7 @@ echo ""
 # ------------------------------------------------------
 # Enter partition names
 # ------------------------------------------------------
+
 lsblk
 read -p "Enter the name of the EFI partition (eg. sda1): " sda1
 read -p "Enter the name of the ROOT partition (eg. sda2): " sda2
@@ -25,11 +26,13 @@ read -p "Enter the name of the ROOT partition (eg. sda2): " sda2
 # ------------------------------------------------------
 # Sync time
 # ------------------------------------------------------
+
 timedatectl set-ntp true
 
 # ------------------------------------------------------
 # Format partitions
 # ------------------------------------------------------
+
 mkfs.fat -F 32 /dev/$sda1;
 mkfs.btrfs -f /dev/$sda2
 # mkfs.btrfs -f /dev/$sda3
@@ -37,6 +40,7 @@ mkfs.btrfs -f /dev/$sda2
 # ------------------------------------------------------
 # Mount points for btrfs
 # ------------------------------------------------------
+
 mount /dev/$sda2 /mnt
 btrfs su cr /mnt/@
 btrfs su cr /mnt/@home
@@ -77,11 +81,13 @@ reflector -c GB -c DE --sort rate -l 10 --save /etc/pacman.d/mirrorlist
 # ------------------------------------------------------
 # Install base packages
 # ------------------------------------------------------
+
 pacstrap -K /mnt base base-devel linux linux-firmware intel-ucode git vim reflector rsync openssh
 
 # ------------------------------------------------------
 # Generate fstab
 # ------------------------------------------------------
+
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 
@@ -103,6 +109,7 @@ cp basepkglist.txt /mnt/archroot/
 # ------------------------------------------------------
 # Chroot to installed sytem
 # ------------------------------------------------------
+
 arch-chroot /mnt
 cd archroot/
 ./02-configuration.sh
