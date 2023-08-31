@@ -23,6 +23,8 @@ hwclock --systohc
 # ------------------------------------------------------
 # Setting up reflector and mirrors for optimal download
 # ------------------------------------------------------
+sed -i 's/^#Color/Color/' /etc/pacman.conf
+sed -i 's/^#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 # sed -i 's/ParallelDownloads = 5/ParallelDownloads = 2/' /etc/pacman.conf
 pacman -S --noconfirm --needed reflector rsync
