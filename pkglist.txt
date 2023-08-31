@@ -49,6 +49,7 @@ grml-zsh-config
 grub
 grub-btrfs
 hdparm
+htop
 hyperv
 intel-ucode
 irssi
