@@ -52,7 +52,7 @@ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 # ------------------------------------------------------
 # Set Keyboard
 # ------------------------------------------------------
-echo "FONT=ter-v18n" >> /etc/vconsole.conf
+echo "FONT=ter-120n" >> /etc/vconsole.conf
 # echo "KEYMAP=$keyboardlayout" >> /etc/vconsole.conf
 
 # ------------------------------------------------------
