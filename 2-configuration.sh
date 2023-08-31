@@ -114,7 +114,8 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: A
 # Copy installation scripts to home directory 
 # ------------------------------------------------------
 mkdir -p /home/$username/scripts
-cp ./extra/* /home/$username/scripts
+cp /mnt/archinstall/extra/* /home/$username/scripts
+sudo chown $username:$username /home/$username/scripts
 
 clear
 echo "     _                   "
