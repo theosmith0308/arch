@@ -1,4 +1,5 @@
 acpi
+acpid
 acpi_call
 alsa-utils
 amd-ucode
