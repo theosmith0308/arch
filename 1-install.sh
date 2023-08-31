@@ -61,7 +61,9 @@ mount /dev/$sda1 /mnt/boot/efi
 timedatectl set-ntp true
 pacman -S --noconfirm archlinux-keyring #update keyrings to latest to prevent packages failing to install
 pacman -S --noconfirm --needed pacman-contrib terminus-font
-setfont ter-v20b
+setfont ter-120b
+sed -i 's/^#Color/Color/' /etc/pacman.conf
+sed -i 's/^#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 # sed -i 's/ParallelDownloads = 5/ParallelDownloads = 2/' /etc/pacman.conf
 # pacman -S --noconfirm --needed reflector rsync
