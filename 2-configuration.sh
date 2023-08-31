@@ -28,7 +28,7 @@ sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 pacman -S --noconfirm --needed reflector rsync
 # cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 echo "Start reflector..."
-reflector -c ZA -c US --sort rate -f 5 -l 10 --save /etc/pacman.d/mirrorlist
+reflector -c ZA,GB,DE,US --sort rate -l 10 --save /etc/pacman.d/mirrorlist
 
 # ------------------------------------------------------
 # Synchronize mirrors
