@@ -63,7 +63,7 @@ pacman -S --noconfirm archlinux-keyring #update keyrings to latest to prevent pa
 pacman -S --noconfirm --needed pacman-contrib terminus-font
 setfont ter-v20b
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
-sed -i 's/ParallelDownloads = 5/ParallelDownloads = 2/' /etc/pacman.conf
+# sed -i 's/ParallelDownloads = 5/ParallelDownloads = 2/' /etc/pacman.conf
 # pacman -S --noconfirm --needed reflector rsync
 # cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 
@@ -89,6 +89,7 @@ cat /mnt/etc/fstab
 # ------------------------------------------------------
 mkdir /mnt/archinstall
 cp -r ./ /mnt/archinstall/
+cp pkglist.txt /mnt/
 
 # ------------------------------------------------------
 # Chroot to installed sytem
