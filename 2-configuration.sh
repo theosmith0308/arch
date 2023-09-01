@@ -26,11 +26,11 @@ hwclock --systohc
 sed -i 's/^#Color/Color/' /etc/pacman.conf
 sed -i 's/^#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
-# sed -i 's/ParallelDownloads = 5/ParallelDownloads = 2/' /etc/pacman.conf
+sed -i 's/ParallelDownloads = 5/ParallelDownloads = 2/' /etc/pacman.conf
 pacman -S --noconfirm --needed reflector rsync
 # cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 echo "Start reflector..."
-reflector -c ZA,GB,DE,US --sort rate -l 10 --save /etc/pacman.d/mirrorlist
+# reflector -c ZA,GB,DE,US --sort rate -l 10 --save /etc/pacman.d/mirrorlist
 
 # ------------------------------------------------------
 # Synchronize mirrors
@@ -40,8 +40,7 @@ pacman -Syy
 # ------------------------------------------------------
 # Install Packages
 # ------------------------------------------------------
-pacman -S --noconfirm --needed grub xdg-desktop-portal-wlr efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups alsa-utils bash-completion acpi acpi_call dnsmasq openbsd-netcat ipset firewalld sof-firmware nss-mdns acpid os-prober ntfs-3g terminus-font exa htop ranger zip unzip unrar neofetch duf xclip grub-btrfs xf86-video-intel xf86-video-qxl inxi wayland egl-wayland 
-
+pacman -S --noconfirm --needed - < pkglist.txt
 # ------------------------------------------------------
 # set lang utf8 US
 # ------------------------------------------------------
@@ -53,7 +52,7 @@ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 # Set Keyboard
 # ------------------------------------------------------
 echo "FONT=ter-v20b" >> /etc/vconsole.conf
-# echo "KEYMAP=$keyboardlayout" >> /etc/vconsole.conf
+echo "KEYMAP=$keyboardlayout" >> /etc/vconsole.conf
 
 # ------------------------------------------------------
 # Set hostname and localhost
@@ -93,7 +92,7 @@ systemctl enable acpid
 # ------------------------------------------------------
 # Grub installation
 # ------------------------------------------------------
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch --removable
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # ------------------------------------------------------
@@ -101,7 +100,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # ------------------------------------------------------
 # Before: BINARIES=()
 # After:  BINARIES=(btrfs)
-sed -i 's/BINARIES=()/BINARIES=(btrfs)/g' /etc/mkinitcpio.conf
+# sed -i 's/BINARIES=()/BINARIES=(btrfs)/g' /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 # ------------------------------------------------------
