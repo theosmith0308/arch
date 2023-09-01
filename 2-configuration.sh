@@ -40,7 +40,7 @@ pacman -Syy
 # ------------------------------------------------------
 # Install Packages
 # ------------------------------------------------------
-pacman -S --noconfirm --needed - < pkglist.txt 
+pacman -S --noconfirm --needed grub xdg-desktop-portal-wlr efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups alsa-utils bash-completion acpi acpi_call dnsmasq openbsd-netcat ipset firewalld sof-firmware nss-mdns acpid os-prober ntfs-3g terminus-font exa htop ranger zip unzip unrar neofetch duf xclip grub-btrfs xf86-video-intel xf86-video-qxl inxi wayland wayland-egl 
 
 # ------------------------------------------------------
 # set lang utf8 US
