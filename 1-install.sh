@@ -61,18 +61,18 @@ mount /dev/$sda3 /mnt/windows
 timedatectl set-ntp true
 pacman -S --noconfirm archlinux-keyring #update keyrings to latest to prevent packages failing to install
 pacman -S --noconfirm --needed pacman-contrib terminus-font
-setfont ter-120b
+setfont ter-v20b
 sed -i 's/^#Color/Color/' /etc/pacman.conf
 sed -i 's/^#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
-# sed -i 's/ParallelDownloads = 5/ParallelDownloads = 2/' /etc/pacman.conf
+sed -i 's/ParallelDownloads = 5/ParallelDownloads = 2/' /etc/pacman.conf
 # pacman -S --noconfirm --needed reflector rsync
 # cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 
 # ------------------------------------------------------
 # Run reflector to update mirrorlist
 # ------------------------------------------------------
-# reflector -c GB -c DE --sort rate -l 10 --save /etc/pacman.d/mirrorlist
+# reflector -c ZA,US,GB,DE --sort rate -l 10 --save /etc/pacman.d/mirrorlist
 pacman -Sy
 
 # ------------------------------------------------------
