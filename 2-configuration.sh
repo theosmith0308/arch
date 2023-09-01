@@ -9,7 +9,7 @@
 # (2023)
 # ------------------------------------------------------
 clear
-keyboardlayout="en-US"
+keyboardlayout="US"
 zoneinfo="Africa/Windhoek"
 hostname="arch"
 username="theo"
@@ -52,7 +52,7 @@ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 # ------------------------------------------------------
 # Set Keyboard
 # ------------------------------------------------------
-echo "FONT=ter-120n" >> /etc/vconsole.conf
+echo "FONT=ter-v20b" >> /etc/vconsole.conf
 # echo "KEYMAP=$keyboardlayout" >> /etc/vconsole.conf
 
 # ------------------------------------------------------
@@ -100,8 +100,8 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # Add btrfs and setfont to mkinitcpio
 # ------------------------------------------------------
 # Before: BINARIES=()
-# After:  BINARIES=(btrfs setfont)
-sed -i 's/BINARIES=()/BINARIES=(btrfs setfont)/g' /etc/mkinitcpio.conf
+# After:  BINARIES=(btrfs)
+sed -i 's/BINARIES=()/BINARIES=(btrfs)/g' /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 # ------------------------------------------------------
