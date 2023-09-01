@@ -118,6 +118,7 @@ sequoia-sq
 sg3_utils
 smartmontools
 sof-firmware
+speedtest-cli
 squashfs-tools
 sudo
 syslinux
