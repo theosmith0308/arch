@@ -51,8 +51,8 @@ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 # ------------------------------------------------------
 # Set Keyboard
 # ------------------------------------------------------
-echo "FONT=ter-v20b" >> /etc/vconsole.conf
-echo "KEYMAP=$keyboardlayout" >> /etc/vconsole.conf
+# echo "FONT=ter-v20b" >> /etc/vconsole.conf
+# echo "KEYMAP=$keyboardlayout" >> /etc/vconsole.conf
 
 # ------------------------------------------------------
 # Set hostname and localhost
