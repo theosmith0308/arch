@@ -101,7 +101,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # Before: BINARIES=()
 # After:  BINARIES=(btrfs)
 # sed -i 's/BINARIES=()/BINARIES=(btrfs)/g' /etc/mkinitcpio.conf
-mkinitcpio -p linux
+# mkinitcpio -p linux
 
 # ------------------------------------------------------
 # Add user to wheel
@@ -115,7 +115,7 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: A
 # Copy installation scripts to home directory 
 # ------------------------------------------------------
 mkdir -p /home/$username/scripts
-cp /mnt/archinstall/extras/* /home/$username/scripts
+cp -r /mnt/archinstall/extras/* /home/$username/scripts
 sudo chown $username:$username /home/$username/scripts
 
 clear
