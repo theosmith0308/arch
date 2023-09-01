@@ -20,7 +20,7 @@ echo ""
 lsblk
 read -p "Enter the name of the EFI partition (eg. sda1): " sda1
 read -p "Enter the name of the ROOT partition (eg. sda2): " sda2
-# read -p "Enter the name of the VM partition (keep it empty if not required): " sda3
+read -p "Enter the name of the windows partition (keep it empty if not required): " sda3
 
 # ------------------------------------------------------
 # Sync time
@@ -30,7 +30,7 @@ timedatectl set-ntp true
 # ------------------------------------------------------
 # Format partitions
 # ------------------------------------------------------
-mkfs.fat -F 32 /dev/$sda1;
+# mkfs.fat -F 32 /dev/$sda1;
 mkfs.btrfs -f /dev/$sda2
 # mkfs.btrfs -f /dev/$sda3
 
@@ -52,8 +52,8 @@ mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@pkg /dev/$sda2 /mnt/var/cache/pacman/pkg
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@images /dev/$sda2 /mnt/var/lib/libvirt/images
 mount /dev/$sda1 /mnt/boot/efi
-# mkdir /mnt/windows
-# mount /dev/$sda3 /mnt/windows
+mkdir /mnt/windows
+mount /dev/$sda3 /mnt/windows
 
 # ------------------------------------------------------
 # Setting up mirrors for optimal download
