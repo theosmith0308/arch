@@ -30,6 +30,7 @@ edk2-shell
 efibootmgr
 firefox
 firefox-ublock-origin
+firewalld
 grub
 grub-btrfs
 htop
