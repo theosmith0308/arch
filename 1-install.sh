@@ -43,6 +43,7 @@ btrfs su cr /mnt/@home
 btrfs su cr /mnt/@log
 btrfs su cr /mnt/@pkg
 btrfs su cr /mnt/@images
+btrfs su cr /mnt/@snapshots
 umount /mnt
 
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda2 /mnt
@@ -51,6 +52,7 @@ mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@home /de
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/$sda2 /mnt/var/log
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@pkg /dev/$sda2 /mnt/var/cache/pacman/pkg
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@images /dev/$sda2 /mnt/var/lib/libvirt/images
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/$sda2 /mnt/.snapshots
 mount /dev/$sda1 /mnt/boot/efi
 mkdir /mnt/windows
 mount /dev/$sda3 /mnt/windows
