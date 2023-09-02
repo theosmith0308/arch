@@ -120,7 +120,7 @@ wget
 whois
 wireless_tools
 wpa_supplicant
-xdg-user-drs
+xdg-user-dirs
 xdg-utils
 xf86-video-qxl
 zram-generator
