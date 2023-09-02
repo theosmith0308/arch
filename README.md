@@ -14,14 +14,13 @@ To get detailed information how to install Arch Linux, please visit https://wiki
 loadkeys de-latin1
 
 # Increase font size (optional)
-setfont ter-p20b
+setfont ter-v20b
 
 # Connect to WLAN (if not LAN)
 iwctl --passphrase [password] station wlan0 connect [network]
 
 # Check internet connection
-ping -c4 www.archlinux.org
-
+ping -c5 8.8.8.8
 # Check partitions
 lsblk
 
@@ -29,7 +28,7 @@ lsblk
 gdisk /dev/sda
 # Partition 1: +512M ef00 (for EFI)
 # Partition 2: Available space 8300 (for Linux filesystem)
-# (Optional Partition 3 for Virtual Machines)
+# (Optional Partition 3 for windows)
 # Write w, Confirm Y
 
 # Sync package
@@ -41,7 +40,7 @@ pacman -S archlinux-keyring
 pacman -Syy
 
 # Install git
-pacman -S git
+pacman -S git glibc
 
 # Clone Installation
 git clone https://github.com/theosmith0308/arch.git
@@ -54,7 +53,7 @@ cd archinstall
 
 ## Additional information
 
-Please note that the scripts in folder /optional are not tested yet.
+Please note that the scripts in folder are optional.
 
 After the installation you will find additional scripts in your home folder to install
 
@@ -63,5 +62,4 @@ After the installation you will find additional scripts in your home folder to i
 - timeshift snapshots
 - preload application cache
 
-Please also check out the dotfiles to configure qtile and several other applications.
 
