@@ -37,12 +37,15 @@ chown -R :wheel /.snapshots
 #Exit root
 Exit
 
+REBOOT
+
 #Beome root again
 SU
 cd /
 
-systemctl enable --now grub-btrfs.path
-grub-mkconfig -o /efi/grub/grub.cfg
+systemctl enable --now grub-btrfsd.service (old: grub-btrfs.path) 
+grub-mkconfig -o /boot/grub/grub.cfg
+# Old: grub-mkconfig -o /efi/grub/grub.cfg
 
 systemctl enable --now snapper-timeline.timer
 systemctl enable --now snapper-cleanup.timer
