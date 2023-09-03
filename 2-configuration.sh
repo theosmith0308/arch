@@ -18,7 +18,7 @@ username="theo"
 # Set System Time
 # ------------------------------------------------------
 ln -sf /usr/share/zoneinfo/$zoneinfo /etc/localtime
-hwclock --systohc
+hwclock --systohc --utc
 
 # ------------------------------------------------------
 # Setting up reflector and mirrors for optimal download
