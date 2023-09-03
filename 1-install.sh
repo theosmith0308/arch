@@ -47,7 +47,7 @@ btrfs su cr /mnt/@snapshots
 umount /mnt
 
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda2 /mnt
-mkdir -p /mnt/{boot/efi,home,var/log,var/cache/pacman/pkg,var/lib/libvirt/images}
+mkdir -p /mnt/{boot/efi,home,var/log,var/cache/pacman/pkg,var/lib/libvirt/images/.snapshots}
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@home /dev/$sda2 /mnt/home
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/$sda2 /mnt/var/log
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@pkg /dev/$sda2 /mnt/var/cache/pacman/pkg
