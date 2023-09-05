@@ -26,16 +26,16 @@ hwclock --systohc --utc
 sed -i 's/^#Color/Color/' /etc/pacman.conf
 sed -i 's/^#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
-sed -i 's/ParallelDownloads = 5/ParallelDownloads = 2/' /etc/pacman.conf
-pacman -S --noconfirm --needed reflector rsync
-cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-echo "Start reflector..."
-reflector -c ZA --sort rate -p https -p http -l 10 --save /etc/pacman.d/mirrorlist
+sed -i 's/ParallelDownloads = 5/ParallelDownloads = 3/' /etc/pacman.conf
+# pacman -S --noconfirm --needed reflector rsync
+# cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+# echo "Start reflector..."
+# reflector -c ZA --sort rate -p https -p http -l 10 --save /etc/pacman.d/mirrorlist
 
 # ------------------------------------------------------
 # Synchronize mirrors
 # ------------------------------------------------------
-pacman -Syy
+# pacman -Syy
 
 # ------------------------------------------------------
 # Install Packages
@@ -116,9 +116,9 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: A
 # ------------------------------------------------------
 # Copy installation scripts to home directory 
 # ------------------------------------------------------
-mkdir -p /home/$username/scripts
-sudo cp -r /archinstall/extras/* /home/$username/scripts
-sudo chown $username:$username /home/$username/scripts
+# mkdir -p /home/$username/scripts
+cp -r /archinstall/extras /home/$username
+# sudo chown $username:$username /home/$username/scripts
 
 clear
 echo "     _                   "
