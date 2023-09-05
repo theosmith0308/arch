@@ -54,8 +54,8 @@ mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@pkg /dev
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@images /dev/$sda2 /mnt/var/lib/libvirt/images
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/$sda2 /mnt/.snapshots
 mount /dev/$sda1 /mnt/boot/efi
-mkdir /mnt/windows
-mount /dev/$sda3 /mnt/windows
+# mkdir /mnt/windows
+# mount /dev/$sda3 /mnt/windows
 
 # ------------------------------------------------------
 # Setting up mirrors for optimal download
@@ -68,7 +68,7 @@ sed -i 's/^#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 sed -i 's/ParallelDownloads = 5/ParallelDownloads = 2/' /etc/pacman.conf
 # pacman -S --noconfirm --needed reflector rsync
-cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+# cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 
 # ------------------------------------------------------
 # Run reflector to update mirrorlist
