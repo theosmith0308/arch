@@ -18,8 +18,8 @@ echo ""
 # Enter partition names
 # ------------------------------------------------------
 lsblk
-read -p "Enter the name of the EFI partition (eg. sda1): " vda1
-read -p "Enter the name of the ROOT partition (eg. sda2): " vda2
+read -p "Enter the name of the EFI partition (eg. sda1): " sda1
+read -p "Enter the name of the ROOT partition (eg. sda2): " sda2
 read -p "Enter the name of the windows partition (keep it empty if not required): " sda3
 
 # ------------------------------------------------------
