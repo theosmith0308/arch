@@ -93,7 +93,7 @@ systemctl enable firewalld
 # ------------------------------------------------------
 # Grub installation
 # ------------------------------------------------------
-grub-install --target=x86_64-efi --efi-directory=/efi --bbot-directory=/boot --bootloader-id=Arch /dev/$sda2
+grub-install --target=x86_64-efi --efi-directory=/efi --boot-directory=/boot --bootloader-id=Arch /dev/$sda2
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # ------------------------------------------------------
