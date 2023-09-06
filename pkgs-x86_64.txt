@@ -32,7 +32,6 @@ firefox
 firefox-ublock-origin
 firewalld
 grub
-grub-btrfs
 htop
 inotify-tools
 iwd
