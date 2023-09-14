@@ -30,7 +30,7 @@ timedatectl set-ntp true
 # ------------------------------------------------------
 # Format partitions
 # ------------------------------------------------------
-mkfs.fat -F 32 /dev/$sda1
+# mkfs.fat -F 32 /dev/$sda1
 mkfs.btrfs -f /dev/$sda2
 # mkfs.btrfs -f /dev/$sda3
 
@@ -40,17 +40,15 @@ mkfs.btrfs -f /dev/$sda2
 mount /dev/$sda2 /mnt
 btrfs su cr /mnt/@
 btrfs su cr /mnt/@home
-btrfs su cr /mnt/@log
-btrfs su cr /mnt/@pkg
+btrfs su cr /mnt/@var_log
 btrfs su cr /mnt/@images
 btrfs su cr /mnt/@snapshots
 umount /mnt
 
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda2 /mnt
-mkdir -p /mnt/{boot/efi,home,var/log,var/cache/pacman/pkg,var/lib/libvirt/images,.snapshots,btrfsroot}
+mkdir -p /mnt/{boot/efi,home,var/log,var/lib/libvirt/images,.snapshots}
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@home /dev/$sda2 /mnt/home
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/$sda2 /mnt/var/log
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@pkg /dev/$sda2 /mnt/var/cache/pacman/pkg
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@var_log /dev/$sda2 /mnt/var/log
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@images /dev/$sda2 /mnt/var/lib/libvirt/images
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/$sda2 /mnt/.snapshots
 mount /dev/$sda1 /mnt/boot/efi
