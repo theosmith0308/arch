@@ -26,7 +26,7 @@ hwclock --systohc --utc
 sed -i 's/^#Color/Color/' /etc/pacman.conf
 sed -i 's/^#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
-sed -i 's/ParallelDownloads = 5/ParallelDownloads = 3/' /etc/pacman.conf
+# sed -i 's/ParallelDownloads = 5/ParallelDownloads = 3/' /etc/pacman.conf
 # pacman -S --noconfirm --needed reflector rsync
 # cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 # echo "Start reflector..."
@@ -116,9 +116,9 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: A
 # ------------------------------------------------------
 # Copy installation scripts to home directory 
 # ------------------------------------------------------
-# mkdir -p /home/$username/scripts
-cp -r /archinstall/extras /home/$username
-# sudo chown $username:$username /home/$username/scripts
+mkdir -p /home/$username/extras
+cp -r /archinstall/extras /home/$username/extras
+sudo chown $username /home/$username/extras
 
 clear
 echo "     _                   "
