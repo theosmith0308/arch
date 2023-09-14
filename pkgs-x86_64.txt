@@ -1,5 +1,4 @@
 alsa-utils
-amd-ucode
 arch-install-scripts
 archinstall
 archlinux-wallpaper
@@ -90,8 +89,6 @@ sed
 sequoia-sq
 sg3_utils
 smartmontools
-snapper
-snap-pac
 sof-firmware
 speedtest-cli
 squashfs-tools
