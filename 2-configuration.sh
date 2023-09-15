@@ -93,7 +93,7 @@ systemctl enable firewalld
 # ------------------------------------------------------
 # Grub installation
 # ------------------------------------------------------
-grub-install --target=x86_64-efi --efi-directory=/efi --boot-directory=/boot --bootloader-id=Arch /dev/$sda2
+grub-install --target=x86_64-efi --efi-directory=/efi --boot-directory=/boot --bootloader-id=Arch
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # ------------------------------------------------------
@@ -118,7 +118,7 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: A
 # ------------------------------------------------------
 mkdir -p /home/$username/extras
 sudo cp -r /archinstall/extras /home/$username/
-sudo chown -R :wheel /home/$username/extras
+sudo chown -R :wheel /home/$username/extras/*
 
 clear
 echo "     _                   "
