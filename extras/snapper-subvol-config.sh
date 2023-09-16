@@ -22,11 +22,11 @@ sed -i 's|TIMELINE_LIMIT_DAILY="10"|TIMELINE_LIMIT_DAILY="7"|' /etc/snapper/conf
 sed -i 's|TIMELINE_LIMIT_WEEKLY="0"|TIMELINE_LIMIT_WEEKLY="0"|' /etc/snapper/configs/root
 sed -i 's|TIMELINE_LIMIT_MONTHLY="10"|TIMELINE_LIMIT_MONTHLY="0"|' /etc/snapper/configs/root
 sed -i 's|TIMELINE_LIMIT_YEARLY="10"|TIMELINE_LIMIT_YEARLY="0"|' /etc/snapper/configs/root
-sed -i 's|OnUnitActiveSec="1d"|OnUnitActiveSec="1h"|' /etc/systemd/system/timers.target.wants/snapper-cleanup.timer
+sed -i 's|OnUnitActiveSec=1d|OnUnitActiveSec=1h|' /etc/systemd/system/timers.target.wants/snapper-cleanup.timer
 
 #activating the auto-cleanup
 SCRUB=$(systemd-escape --template btrfs-scrub@.timer --path /dev/$sda2)
 systemctl enable ${SCRUB}
 systemctl enable snapper-timeline.timer
 systemctl enable snapper-cleanup.timer
-grub-mkconfig -o /efi/grub/grub.cfg
+grub-mkconfig -o /boot/grub/grub.cfg
