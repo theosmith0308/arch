@@ -53,7 +53,7 @@ mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@images /
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/$sda2 /mnt/.snapshots
 mount /dev/$sda1 /mnt/efi
 # mkdir /mnt/windows
-# mount /dev/$sda3 /mnt/windows
+# mount -o defaults,noatime,commit=120 /dev/$sda3 /mnt/home
 
 # ------------------------------------------------------
 # Setting up mirrors for optimal download
