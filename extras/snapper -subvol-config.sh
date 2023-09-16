@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#Run this as superuser
+
 umount /.snapshots
 rm -r /.snapshots
 snapper --no-dbus -c root create-config /
@@ -28,6 +30,3 @@ systemctl enable ${SCRUB}
 systemctl enable snapper-timeline.timer
 systemctl enable snapper-cleanup.timer
 grub-mkconfig -o /efi/grub/grub.cfg
-
-ALLOW_GROUPS=""
-
