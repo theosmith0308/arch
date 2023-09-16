@@ -55,6 +55,7 @@ cd /
 sudo btrfs subvol list /
 snapper ls (choose restore snapshot)
 sudo mount /dev/sda? -o subvolid=5 /mnt	(?=root partition)
+cd /mnt
 ls -a
 sudo mv @ @.broken
 sudo btrfs subvol snapshot /mnt/@snapshots/number/snapshot/ /mnt/@
