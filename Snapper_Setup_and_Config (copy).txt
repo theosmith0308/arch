@@ -1,0 +1,78 @@
+yay -S snapper-support
+
+#Become root
+sudo -s
+cd /
+
+umount /.snapshots
+rm -r /.snapshots
+snapper --no-dbus -c root create-config /
+btrfs subvol del /.snapshots
+
+mkdir .snapshots
+mount -a
+
+chmod 750 /.snapshots
+lsblk
+
+## Check First ##
+# btrfs subvol get-def /
+# btrfs subvol list /
+# btrfs subvol set-def 256 / (#Make sure it is @)
+# btrfs subvol get-def /
+
+vim /etc/snapper/configs/root
+#Change ALLOW_USERS="" to ALLOW_USERS="theo"
+#Change ALLOW_GROUPS="" to ALLOW_GROUPS="wheel" 
+#Limits for timeline cleanup for Hourly,Daily,Weekly,Monthly,Yearly to 5,7,0,0,0
+
+#Save and exit file
+
+# chown -R :wheel /.snapshots
+
+systemctl enable --now grub-btrfsd.service
+grub-mkconfig -o /boot/grub/grub.cfg
+
+SCRUB=$(systemd-escape --template btrfs-scrub@.timer --path /dev/sda?) #(?=root)
+systemctl enable ${SCRUB}
+systemctl enable --now snapper-timeline.timer
+systemctl enable --now snapper-cleanup.timer
+
+Now edit snapper-cleanup.timer located in /etc/systemd/system/timers.target.wants/, you need to change OnUnitActiveSec. To make cleanups occur every hour instead of every day, edit:
+
+[Timer]
+OnUnitActiveSec=1h
+
+#Now create a snapshot and name it
+snapper -c root create -d Base 'System Config'
+
+#Now sync with grub
+grub-mkconfig -o /efi/grub/grub.cfg
+
+#Exit root
+Exit
+
+### Restore###
+
+cd /
+sudo btrfs subvol list /
+snapper ls (choose restore snapshot)
+sudo mount /dev/sda? -o subvolid=5 /mnt	(?=root partition)
+cd /mnt
+ls -a
+sudo mv @ @.broken
+sudo btrfs subvol snapshot /mnt/@snapshots/number/snapshot/ /mnt/@
+reboot
+cd /
+sudo snapper --ambit classic rollback number (number=restored snapshot number)
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+su
+cd /
+mount /dev/sda? -o subvolid=5 /mnt
+cd /mnt
+ls
+rm -rf @.broken
+exit
+exit
+Done
+
