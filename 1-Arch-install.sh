@@ -80,6 +80,11 @@ pacman -Sy
 pacstrap -K /mnt base btrfs-progs git intel-ucode linux linux-firmware ntfs-3g openssh pacman-contrib reflector rsync vim
 
 # ------------------------------------------------------
+# Install boot packages
+# ------------------------------------------------------
+pacstrap -K /mnt grub grub-btrfs os-prober efibootmgr
+
+# ------------------------------------------------------
 # Generate fstab
 # ------------------------------------------------------
 genfstab -U /mnt >> /mnt/etc/fstab
