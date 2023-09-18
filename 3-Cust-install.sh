@@ -41,16 +41,14 @@ mount /dev/$sda2 /mnt
 btrfs su cr /mnt/@
 btrfs su cr /mnt/@home
 btrfs su cr /mnt/@var_log
-btrfs su cr /mnt/@images
 btrfs su cr /mnt/@snapshots
 umount /mnt
 
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvolid=256 /dev/$sda2 /mnt
-mkdir -p /mnt/{efi,home,var/log,var/cache/pacman/pkg,var/lib/libvirt/images,.snapshots,.btrfsroot}
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvolid=257 /dev/$sda2 /mnt/home
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvolid=258 /dev/$sda2 /mnt/var/log
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvolid=259 /dev/$sda2 /mnt/var/lib/libvirt/images
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvolid=260 /dev/$sda2 /mnt/.snapshots
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda2 /mnt
+mkdir -p /mnt/{efi,home,var/log,.snapshots,.btrfsroot}
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@home /dev/$sda2 /mnt/home
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@var_log /dev/$sda2 /mnt/var/log
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/$sda2 /mnt/.snapshots
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvolid=5 /dev/$sda2 /mnt/.btrfsroot
 mount /dev/$sda1 /mnt/efi
 # mkdir /mnt/windows
