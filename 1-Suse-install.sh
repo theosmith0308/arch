@@ -118,7 +118,7 @@ pacman -Sy
 # ------------------------------------------------------
 # Install base packages
 # ------------------------------------------------------
-pacstrap -K /mnt base btrfs-progs git intel-ucode linux linux-firmware openssh pacman-contrib reflector rsync vim
+pacstrap -K /mnt base btrfs-progs git intel-ucode linux linux-firmware ntfs-3g openssh pacman-contrib reflector rsync vim
 
 # ------------------------------------------------------
 # Generate fstab
