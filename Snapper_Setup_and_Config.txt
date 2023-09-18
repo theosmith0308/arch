@@ -38,6 +38,19 @@ Now edit snapper-cleanup.timer located in /etc/systemd/system/timers.target.want
 [Timer]
 OnUnitActiveSec=1h
 
+#The failure of the snapper cleanup number service, over time will cause the filesystem to be exhausted by snapshots without manual intervention. So these subvolumes must be deleted with:
+
+#Check
+btrfs subvol list / 
+
+#Commands
+
+sudo btrfs subvolume delete /.snapshots/1/snapshot/var/lib/portables
+
+and
+
+sudo btrfs subvolume delete /.snapshots/1/snapshot/var/lib/machines
+
 #Now create a snapshot and name it
 snapper -c root create -d "***Base System Configuration***"
 
