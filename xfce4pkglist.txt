@@ -23,6 +23,6 @@ xed
 xfce4
 xfce4-goodies
 
-Lightdm
+lightdm
 lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
