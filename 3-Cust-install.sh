@@ -39,12 +39,13 @@ mkfs.ext4 /dev/$sda3
 # ------------------------------------------------------
 mount /dev/$sda2 /mnt
 btrfs su cr /mnt/@
+btrfs su cr /mnt/@.snapshots
+btrfs su cr /mnt/.snapshots/1/snapshot
 btrfs su cr /mnt/@var_log
-btrfs su cr /mnt/@snapshots
 umount /mnt
 
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda2 /mnt
-mkdir -p /mnt/{efi,home,var/log,.snapshots,.btrfsroot}
+mkdir -p /mnt/{efi,home,var/log,.snapshots/1,.btrfsroot}
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@var_log /dev/$sda2 /mnt/var/log
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/$sda2 /mnt/.snapshots
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvolid=5 /dev/$sda2 /mnt/.btrfsroot
