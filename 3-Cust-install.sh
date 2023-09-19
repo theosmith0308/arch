@@ -91,6 +91,7 @@ cat /mnt/etc/fstab
 mkdir /mnt/archinstall
 cp -r ./ /mnt/archinstall/
 cp pkgs-x86_64.txt /mnt/
+cp xfce4pkglist.txt /mnt/
 
 # ------------------------------------------------------
 # Chroot to installed sytem
