@@ -145,6 +145,14 @@ sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /et
 sed -i 's/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: ALL/' /etc/sudoers
 
 # ------------------------------------------------------
+# Install Desktop
+# ------------------------------------------------------
+pacman -S --noconfirm --needed - < xfce4pkglist.txt
+
+# Enable Display Manager
+systemctl enable lightdm
+
+# ------------------------------------------------------
 # Copy installation scripts to home directory 
 # ------------------------------------------------------
 mkdir -p /home/$username/extras
