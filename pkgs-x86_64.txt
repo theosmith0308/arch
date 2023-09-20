@@ -30,7 +30,6 @@ efibootmgr
 firefox
 firefox-ublock-origin
 firewalld
-grub-btrfs
 grub
 htop
 inotify-tools
@@ -90,8 +89,6 @@ sed
 sequoia-sq
 sg3_utils
 smartmontools
-snap-pac
-snapper
 sof-firmware
 speedtest-cli
 squashfs-tools
