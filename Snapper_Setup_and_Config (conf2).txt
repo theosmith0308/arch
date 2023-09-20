@@ -8,10 +8,8 @@ umount /.snapshots
 rm -r /.snapshots
 snapper --no-dbus -c root create-config /
 btrfs subvol del /.snapshots
-
 mkdir .snapshots
 mount -a
-
 chmod 750 /.snapshots
 lsblk
 
@@ -27,8 +25,6 @@ vim /etc/snapper/configs/root
 #Limits for timeline cleanup for Hourly,Daily,Weekly,Monthly,Yearly to 5,7,0,0,0
 
 #Save and exit file
-
-# chown -R :wheel /.snapshots
 
 systemctl enable --now grub-btrfsd.service
 grub-mkconfig -o /boot/grub/grub.cfg
