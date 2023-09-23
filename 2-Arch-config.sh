@@ -118,7 +118,7 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: A
 # ------------------------------------------------------
 mkdir -p /home/$username/extras
 sudo cp -r /archinstall/extras /home/$username/
-sudo chown -R :wheel /home/$username/extras/
+sudo chown -R $username /home/$username/extras/
 sudo chmod +x /home/$username/extras/*
 
 clear
