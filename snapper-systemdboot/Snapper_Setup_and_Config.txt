@@ -27,7 +27,7 @@ vim /etc/snapper/configs/root
 
 chown -R :wheel /.snapshots
 
-systemctl enable --now grub-btrfsd.path
+systemctl enable --now grub-btrfsd.service
 grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable --now snapper-timeline.timer
