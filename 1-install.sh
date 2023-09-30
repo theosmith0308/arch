@@ -84,6 +84,11 @@ pacstrap -K /mnt base linux linux-firmware btrfs-progs intel-ucode openssh git v
 pacstrap -K /mnt grub os-prober efibootmgr dosfstools ntfs-3g
 
 # ------------------------------------------------------
+# Install network components
+# ------------------------------------------------------
+pacstrap -K /mnt networkmanager network-manager-applet broadcom-wl
+
+# ------------------------------------------------------
 # Generate fstab
 # ------------------------------------------------------
 genfstab -U /mnt >> /mnt/etc/fstab
