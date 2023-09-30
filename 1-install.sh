@@ -30,26 +30,27 @@ timedatectl set-ntp true
 # ------------------------------------------------------
 # Format partitions
 # ------------------------------------------------------
-mkfs.fat -F 32 -n EFI /dev/$sda1
+# mkfs.fat -F 32 -n EFI /dev/$sda1
 mkfs.btrfs -L ROOT -f /dev/$sda2
-mkfs.xfs -L HOME /dev/$sda3
+mkfs.ext4 -L HOME /dev/$sda3
 
 # ------------------------------------------------------
 # Mount points for btrfs
 # ------------------------------------------------------
 mount /dev/$sda2 /mnt
 btrfs su cr /mnt/@
-btrfs su cr /mnt/@var_log
+btrfs su cr /mnt/@cache
+btrfs su cr /mnt/@log
 btrfs su cr /mnt/@snapshots
 umount /mnt
 
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda2 /mnt
-mkdir -p /mnt/{/boot/efi,home,var/log,.snapshots,btrfsroot}
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@var_log /dev/$sda2 /mnt/var/log
+mkdir -p /mnt/{efi,home,var/cache,var/log,.snapshots}
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@cache /dev/$sda2 /mnt/var/cache
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/$sda2 /mnt/var/log
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/$sda2 /mnt/.snapshots
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvolid=5 /dev/$sda2 /mnt/btrfsroot
 mount /dev/$sda3 /mnt/home
-mount /dev/$sda1 /mnt/boot/efi
+mount /dev/$sda1 /mnt/efi
 # mkdir /mnt/windows
 # mount -o defaults,noatime,commit=120 /dev/$sda3 /mnt/home
 
