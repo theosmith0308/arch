@@ -104,4 +104,5 @@ cp pkgs-x86_64.txt /mnt/
 # ------------------------------------------------------
 # Chroot to installed sytem
 # ------------------------------------------------------
-arch-chroot /mnt ./archinstall/3-Cust-config.sh
+arch-chroot /mnt 
+# ./archinstall/2-config.sh
