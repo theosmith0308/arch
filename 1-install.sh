@@ -76,7 +76,7 @@ pacman -Sy
 # ------------------------------------------------------
 # Install base packages
 # ------------------------------------------------------
-pacstrap -K /mnt base linux linux-firmware btrfs-progs xfsprogs intel-ucode openssh git vim pacman-contrib reflector rsync
+pacstrap -K /mnt base linux linux-firmware btrfs-progs intel-ucode openssh git vim pacman-contrib reflector rsync
 
 # ------------------------------------------------------
 # Install boot packages
