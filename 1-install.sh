@@ -38,12 +38,12 @@ mkfs.ext4 -L HOME /dev/$sda3
 # Mount points for btrfs
 # ------------------------------------------------------
 mkdir -p /mnt/archinstall
-mount /dev/$sda2 /mnt
-btrfs su cr /mnt/@
-btrfs su cr /mnt/@cache
-btrfs su cr /mnt/@log
-btrfs su cr /mnt/@snapshots
-umount /mnt
+mount /dev/$sda2 /mnt/archinstall
+btrfs su cr /mnt/archinstall/@
+btrfs su cr /mnt/archinstall/@cache
+btrfs su cr /mnt/archinstall/@log
+btrfs su cr /mnt/archinstall/@snapshots
+umount /mnt/archinstall
 
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda2 /mnt/archinstall
 mkdir -p /mnt/{efi,home,var/cache,var/log,.snapshots}
