@@ -53,3 +53,5 @@ mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshot
 mount /dev/$sda3 /mnt/archinstall/home
 mount /dev/$sda1 /mnt/archinstall/boot
 # mount /dev/$sda1 /mnt/archinstall/boot/efi
+
+echo "archinstall"
