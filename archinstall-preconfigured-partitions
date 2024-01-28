@@ -26,6 +26,12 @@ read -p "Enter the name of the HOME partition (eg. sda3): " sda3
 # Sync time
 # ------------------------------------------------------
 timedatectl set-ntp true
+# ------------------------------------------------------
+
+# Run reflector to update mirrorlist
+# ------------------------------------------------------
+reflector -c ZA --sort rate -p https -p http -l 10 --save /etc/pacman.d/mirrorlist
+pacman -Sy
 
 # ------------------------------------------------------
 # Format partitions
