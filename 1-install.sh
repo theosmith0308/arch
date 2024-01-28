@@ -97,9 +97,9 @@ cat /mnt/etc/fstab
 # ------------------------------------------------------
 # Install configuration scripts
 # ------------------------------------------------------
-mkdir /mnt/archinstall/archbase
-cp -r ./ /mnt/archinstall/archbase/
-cp pkgs-x86_64.txt /mnt/archinstall/
+mkdir /mnt/archinstall
+cp -r ./ /mnt/archinstall/
+cp pkgs-x86_64.txt /mnt/
 
 # ------------------------------------------------------
 # Chroot to installed sytem
