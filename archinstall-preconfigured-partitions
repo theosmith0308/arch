@@ -46,7 +46,7 @@ umount /mnt
 
 mkdir -p /mnt/archinstall
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda2 /mnt/archinstall
-mkdir -p /mnt/archinstall/{efi,home,var/cache,var/log,.snapshots}
+mkdir -p /mnt/archinstall/{boot,home,var/cache,var/log,.snapshots}
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@cache /dev/$sda2 /mnt/archinstall/var/cache
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/$sda2 /mnt/archinstall/var/log
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/$sda2 /mnt/archinstall/.snapshots
@@ -54,4 +54,4 @@ mount /dev/$sda3 /mnt/archinstall/home
 mount /dev/$sda1 /mnt/archinstall/boot
 # mount /dev/$sda1 /mnt/archinstall/boot/efi
 
-echo "archinstall"
+archinstall
