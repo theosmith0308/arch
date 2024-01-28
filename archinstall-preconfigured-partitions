@@ -32,6 +32,7 @@ timedatectl set-ntp true
 # ------------------------------------------------------
 reflector -c ZA --sort rate -p https -p http -l 10 --save /etc/pacman.d/mirrorlist
 pacman -Sy
+sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 
 # ------------------------------------------------------
 # Format partitions
