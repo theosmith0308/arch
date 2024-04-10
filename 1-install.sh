@@ -41,16 +41,16 @@ mount /dev/$sda2 /mnt
 btrfs su cr /mnt/@
 btrfs su cr /mnt/@cache
 btrfs su cr /mnt/@log
-btrfs su cr /mnt/@snapshots
+# btrfs su cr /mnt/@snapshots
 umount /mnt
 
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda2 /mnt
-mkdir -p /mnt/{efi,home,var/cache,var/log,.snapshots}
+mkdir -p /mnt/{boot,home,var/cache,var/log}
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@cache /dev/$sda2 /mnt/var/cache
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/$sda2 /mnt/var/log
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/$sda2 /mnt/.snapshots
+# mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/$sda2 /mnt/.snapshots
 mount /dev/$sda3 /mnt/home
-mount /dev/$sda1 /mnt/efi
+mount /dev/$sda1 /mnt/boot
 # mkdir /mnt/windows
 # mount -o defaults,noatime,commit=120 /dev/$sda3 /mnt/home
 
@@ -70,7 +70,7 @@ sed -i 's/ParallelDownloads = 5/ParallelDownloads = 3/' /etc/pacman.conf
 # ------------------------------------------------------
 # Run reflector to update mirrorlist
 # ------------------------------------------------------
-reflector -c ZA --sort rate -p https -p http -l 10 --save /etc/pacman.d/mirrorlist
+# reflector -c ZA --sort rate -p https -p http -l 10 --save /etc/pacman.d/mirrorlist
 pacman -Sy
 
 # ------------------------------------------------------
@@ -81,7 +81,8 @@ pacstrap -K /mnt base linux linux-firmware btrfs-progs intel-ucode openssh git v
 # ------------------------------------------------------
 # Install boot packages
 # ------------------------------------------------------
-pacstrap -K /mnt grub os-prober efibootmgr dosfstools ntfs-3g
+# pacstrap -K /mnt grub os-prober efibootmgr dosfstools ntfs-3g
+pacstrap -K /mnt os-prober efibootmgr dosfstools ntfs-3g
 
 # ------------------------------------------------------
 # Install network components
