@@ -26,7 +26,7 @@ hwclock --systohc --utc
 sed -i 's/^#Color/Color/' /etc/pacman.conf
 sed -i 's/^#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
-# sed -i 's/ParallelDownloads = 5/ParallelDownloads = 3/' /etc/pacman.conf
+sed -i 's/ParallelDownloads = 5/ParallelDownloads = 3/' /etc/pacman.conf
 # pacman -S --noconfirm --needed reflector rsync
 # cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 # echo "Start reflector..."
@@ -93,8 +93,8 @@ systemctl enable firewalld
 # ------------------------------------------------------
 # Grub installation
 # ------------------------------------------------------
-grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=Arch
-grub-mkconfig -o /boot/grub/grub.cfg
+# grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=Arch
+# grub-mkconfig -o /boot/grub/grub.cfg
 
 # ------------------------------------------------------
 # Add btrfs and setfont to mkinitcpio
@@ -110,8 +110,8 @@ mkinitcpio -p linux
 # ------------------------------------------------------
 clear
 # Add sudo no password rights
-sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
-sed -i 's/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: ALL/' /etc/sudoers
+# sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+# sed -i 's/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: ALL/' /etc/sudoers
 
 # ------------------------------------------------------
 # Copy installation scripts to home directory 
