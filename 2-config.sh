@@ -88,7 +88,7 @@ systemctl enable sshd
 # systemctl enable reflector.timer
 systemctl enable fstrim.timer
 systemctl enable firewalld
-# systemctl enable acpid
+systemctl enable acpid
 
 # ------------------------------------------------------
 # Grub installation
