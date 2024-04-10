@@ -95,6 +95,7 @@ systemctl enable firewalld
 # ------------------------------------------------------
 # grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=Arch
 # grub-mkconfig -o /boot/grub/grub.cfg
+bootctl install
 
 # ------------------------------------------------------
 # Add btrfs and setfont to mkinitcpio
@@ -110,8 +111,7 @@ mkinitcpio -p linux
 # ------------------------------------------------------
 clear
 # Add sudo no password rights
-# sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
-# sed -i 's/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: ALL/' /etc/sudoers
+sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 
 # ------------------------------------------------------
 # Copy installation scripts to home directory 
