@@ -147,7 +147,7 @@ fi
 
 # Install packages 
 # PLEASE NOTE: Add more packages at the end of the following command
-sudo pacman -S vim hyprland waybar rofi wofi kitty alacritty dunst dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprpaper chromium ttf-font-awesome
+sudo pacman -S vim hyprland waybar rofi wofi kitty alacritty dunst dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprpaper ttf-font-awesome
 
 # Install yay packages
 # PLEASE NOTE: Add more packages at the end of the following command
@@ -210,7 +210,7 @@ EOF
 echo -e "${NONE}"
     echo "Please select your initial screen resolution. Can be changed later in ~/-config/hypr/hyprland.conf"
     echo ""
-    screenres=$(gum choose --height 15 "1024x768" "1280x720" "1280x800" "1440x900" "1280x1024" "1680x1050" "1280x1440" "1600x1200" "1920x1080" "1920x1200" "2560x1440")
+    screenres=$(gum choose --height 15 "1024x768" "1280x720" "1280x800" "1366x768" "1440x900" "1280x1024" "1680x1050" "1280x1440" "1600x1200" "1920x1080" "1920x1200" "2560x1440")
     SEARCH="monitor=,preferred,auto,auto"
     REPLACE="monitor=,$screenres,auto,1"
     sed -i -e "s/$SEARCH/$REPLACE/g" ~/.config/hypr/hyprland.conf    
