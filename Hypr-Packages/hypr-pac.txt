@@ -1,0 +1,17 @@
+alacritty
+dolphin
+dunst
+hyprland
+hyprpaper
+kitty
+pipewire
+polkit-kde-agent
+qt5-wayland
+qt6-wayland
+rofi
+ttf-font-awesome
+vim
+waybar
+wofi
+xdg-desktop-portal-gtk
+xdg-desktop-portal-hyprland
