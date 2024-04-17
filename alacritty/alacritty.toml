@@ -11,3 +11,21 @@ opacity = 0.7
 [window.padding]
 x = 15
 y = 15
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "PageUp"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "PageDown"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control"
