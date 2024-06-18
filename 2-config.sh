@@ -117,7 +117,7 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 # Copy installation scripts to home directory 
 # ------------------------------------------------------
 mkdir -p /home/$username/extras
-sudo cp -r /archinstall/extras /home/$username/
+sudo cp -r /arch/extras/ /home/$username/extras/
 sudo chown -R $username /home/$username/extras/
 sudo chmod +x /home/$username/extras/*
 
