@@ -26,7 +26,7 @@ hwclock --systohc --utc
 sed -i 's/^#Color/Color/' /etc/pacman.conf
 sed -i 's/^#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
-sed -i 's/ParallelDownloads = 5/ParallelDownloads = 3/' /etc/pacman.conf
+sed -i 's/ParallelDownloads = 5/ParallelDownloads = 5/' /etc/pacman.conf
 # pacman -S --noconfirm --needed reflector rsync
 # cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 # echo "Start reflector..."
