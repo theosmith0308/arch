@@ -105,7 +105,7 @@ cat /mnt/etc/fstab
 mkdir /mnt/archinstall
 cp 2-config.sh /mnt/archinstall/
 cp pkgs-x86_64.txt /mnt
-cp -r extras/ /mnt/archinstall/
+cp -r extras /mnt/archinstall/
 
 # ------------------------------------------------------
 # Chroot to installed sytem
