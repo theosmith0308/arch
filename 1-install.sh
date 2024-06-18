@@ -103,8 +103,8 @@ cat /mnt/etc/fstab
 # Install configuration scripts
 # ------------------------------------------------------
 mkdir /mnt/archinstall
-cp -r ./ /mnt/archinstall/arch
-cp ./ /mnt/archinstall/arch/pkgs-x86_64.txt
+cp 2-config.sh /mnt/archinstall/
+cp pkgs-x86_64.txt /mnt/archinstall/
 
 # ------------------------------------------------------
 # Chroot to installed sytem
