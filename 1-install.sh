@@ -32,7 +32,7 @@ timedatectl set-ntp true
 # ------------------------------------------------------
 # mkfs.fat -F 32 -n EFI /dev/$sda1
 mkfs.btrfs -L ROOT -f /dev/$sda2
-mkfs.btrfs -L HOME /dev/$sda3
+mkfs.btrfs -L HOME -f /dev/$sda3
 
 # ------------------------------------------------------
 # Mount points for btrfs
@@ -48,17 +48,16 @@ btrfs su cr /mnt/@snapshots
 umount /mnt
 
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda2 /mnt
-mkdir -p /mnt/{boot/efi,home,root,srv,var/cache,var/log,var/tmp}
+mkdir -p /mnt/{boot/efi,home,root,srv,var/cache,var/log,var/tmp,.snapshots}
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@root /dev/$sda2 /mnt/root
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@srv /dev/$sda2 /mnt/srv
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@cache /dev/$sda2 /mnt/var/cache
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/$sda2 /mnt/var/log
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/$sda2 /mnt/var/tmp
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/$sda2 /mnt/.snapshots
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@home /dev/$sda3 /mnt/home
 mount /dev/$sda1 /mnt/boot/efi
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async /dev/$sda3 /mnt/home
 # mkdir /mnt/windows
-# mount -o defaults,noatime,commit=120 /dev/$sda3 /mnt/home
 
 # ------------------------------------------------------
 # Setting up mirrors for optimal download
@@ -69,14 +68,14 @@ pacman -S --noconfirm --needed pacman-contrib terminus-font
 sed -i 's/^#Color/Color/' /etc/pacman.conf
 sed -i 's/^#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
-sed -i 's/ParallelDownloads = 5/ParallelDownloads = 3/' /etc/pacman.conf
+sed -i 's/ParallelDownloads = 5/ParallelDownloads = 5/' /etc/pacman.conf
 pacman -S --noconfirm --needed reflector rsync
 # cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 
 # ------------------------------------------------------
 # Run reflector to update mirrorlist
 # ------------------------------------------------------
-reflector -c ZA --sort rate -p https -p http -l 10 --save /etc/pacman.d/mirrorlist
+reflector -c ZA --sort rate -l 10 --save /etc/pacman.d/mirrorlist
 pacman -Sy
 
 # ------------------------------------------------------
