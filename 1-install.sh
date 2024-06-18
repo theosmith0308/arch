@@ -30,7 +30,7 @@ timedatectl set-ntp true
 # ------------------------------------------------------
 # Format partitions
 # ------------------------------------------------------
-# mkfs.fat -F 32 -n EFI /dev/$sda1
+mkfs.fat -F 32 -n EFI /dev/$sda1
 mkfs.btrfs -L ROOT -f /dev/$sda2
 mkfs.btrfs -L HOME -f /dev/$sda3
 
