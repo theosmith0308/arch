@@ -1,7 +1,7 @@
 #!/bin/bash
 
-git clone https://aur.archlinux.org/paru-bin.git
-cd paru-bin
-makepkg -sic
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+makepkg -si PKGBUILD
 
 echo "DONE!"
