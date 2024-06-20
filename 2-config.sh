@@ -102,8 +102,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # ------------------------------------------------------
 # Before: BINARIES=() MODULES=()
 # After:  BINARIES=(/usr/bin/btrfs) MODULES=(btrfs)
-sed -i 's/MODULES=()/MODULES=(btrfs)/g' /etc/mkinitcpio.conf
-sed -i 's/BINARIES=()/BINARIES=(/usr/bin/btrfs)/g' /etc/mkinitcpio.conf
+sed -i 's/BINARIES=()/BINARIES=(btrfs setfont)/g' /etc/mkinitcpio.conf
 mkinitcpio -p linux
 
 # ------------------------------------------------------
