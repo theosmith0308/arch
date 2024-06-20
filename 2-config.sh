@@ -119,6 +119,8 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 sudo cp -r /archinstall/extras /home/$username/
 sudo chown -R $username /home/$username/extras/
 sudo chmod +x /home/$username/extras/*
+sudo rm -rf /archinstall/
+sudo rm pkgs-x86_64.txt
 
 clear
 echo "     _                   "
