@@ -39,8 +39,8 @@ mkfs.btrfs -L HOME -f /dev/$sda3
 # ------------------------------------------------------
 mount /dev/$sda2 /mnt
 btrfs su cr /mnt/@
-btrfs su cr /mnt/@root
 btrfs su cr /mnt/@srv
+btrfs su cr /mnt/@libvirt
 btrfs su cr /mnt/@cache
 btrfs su cr /mnt/@log
 btrfs su cr /mnt/@tmp
@@ -48,14 +48,14 @@ btrfs su cr /mnt/@snapshots
 umount /mnt
 
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda2 /mnt
-mkdir -p /mnt/{boot/efi,home,root,srv,var/cache,var/log,var/tmp,.snapshots}
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@root /dev/$sda2 /mnt/root
+mkdir -p /mnt/{efi,home,srv,var/cache,var/log,var/tmp,var/lib/libvirt,.snapshots}
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@srv /dev/$sda2 /mnt/srv
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@cache /dev/$sda2 /mnt/var/cache
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/$sda2 /mnt/var/log
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/$sda2 /mnt/var/tmp
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@tmp /dev/$sda2 /mnt/var/tmp
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@libvirt /dev/$sda2 /mnt/var/lib/libvirt
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/$sda2 /mnt/.snapshots
-mount /dev/$sda1 /mnt/boot/efi
+mount /dev/$sda1 /mnt/efi
 mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async /dev/$sda3 /mnt/home
 # mkdir /mnt/windows
 
