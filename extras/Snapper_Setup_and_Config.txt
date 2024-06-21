@@ -1,4 +1,4 @@
-yay -S snapper-support
+yay -S snapper-support btrfs-assstant
 
 #Become root
 sudo -s
@@ -83,12 +83,13 @@ cd /
 mount -t btrfs -o subvol=/ /dev/sda? /mnt
 cd /mnt
 ls
-rm -rf @.broken
+
 # Set new root subvol number
 btrfs subvol get-def /
 btrfs subvol list /
 btrfs subvol set-def ??? / (#Make sure it is @)
 btrfs subvol get-def /
+btrfs subvol delete \@.broken/
 exit
 exit
 Done
