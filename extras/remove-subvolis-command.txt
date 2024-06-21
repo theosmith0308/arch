@@ -1,0 +1,1 @@
+sudo sed -i 's/subvolid=.*,//' /etc/fstab
