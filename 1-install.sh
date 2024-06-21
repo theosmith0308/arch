@@ -23,11 +23,6 @@ read -p "Enter the name of the ROOT partition (eg. sda2): " sda2
 read -p "Enter the name of the HOME partition (eg. sda3): " sda3
 
 # ------------------------------------------------------
-# Sync time
-# ------------------------------------------------------
-timedatectl set-ntp true
-
-# ------------------------------------------------------
 # Format partitions
 # ------------------------------------------------------
 mkfs.fat -F 32 -n EFI /dev/$sda1
@@ -70,7 +65,6 @@ sed -i 's/^#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 sed -i 's/ParallelDownloads = 5/ParallelDownloads = 5/' /etc/pacman.conf
 pacman -S --noconfirm --needed reflector rsync
-# cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 
 # ------------------------------------------------------
 # Run reflector to update mirrorlist
