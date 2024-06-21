@@ -1,8 +1,0 @@
-# Check booted snapshot number
-journalctl --boot=-1
-
-# Limit grub snaphots quantity
-sudo vim /etc/default/grub
-Below: GRUB_CMDLINE_LINUX=""
-Enter: GRUB_BTRFS_LIMIT="12"
-# Update grub
