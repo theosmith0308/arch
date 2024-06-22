@@ -7,7 +7,7 @@ yay --noconfirm -S zram-generator
 # -----------------------------------------------------
 # Open zram-generator.conf
 # -----------------------------------------------------
-if [ -f "/etc/systemd/zram-generator2.conf" ]; then
+if [ -f "/etc/systemd/zram-generator.conf" ]; then
     echo "/etc/systemd/zram-generator.conf already exists!"
 else
 	sudo touch /etc/systemd/zram-generator.conf
