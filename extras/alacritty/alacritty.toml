@@ -1,0 +1,66 @@
+import = [
+  "/usr/lib/node_modules/alacritty-themes/themes/Tokyonight_Night.toml"
+]
+
+[cursor.style]
+shape = "Block"
+blinking = "Always"
+
+[cursor]
+blink_interval = 600
+blink_timeout = 0
+unfocused_hollow = true
+#thickness = 0.15
+
+[env]
+TERM = "xterm-256color"
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[font]
+size = 12
+
+  [font.bold]
+  family = "Source Code Pro"
+  style = "Bold"
+
+  [font.bold_italic]
+  family = "Source Code Pro"
+  style = "Bold Italic"
+
+  [font.italic]
+  family = "Source Code Pro"
+  style = "Italic"
+
+  [font.normal]
+  family = "Source Code Pro"
+  style = "Regular"
+
+  [font.offset]
+  x = 0
+  y = 1
+
+[scrolling]
+history = 5_000
+
+[window]
+dynamic_padding = false
+opacity = 0.95
+title = "Alacritty"
+
+  [window.class]
+  general = "Alacritty"
+  instance = "Alacritty"
+
+  [window.padding]
+  x = 15
+  y = 8
+
+  [window.dimensions]
+  columns = 100
+  lines = 24
+
+[debug]
+persistent_logging = false
+render_timer = false
