@@ -1,3 +1,6 @@
+# Inserts a blank line between shell prompts
+add_newline = false
+
 format = """
 $username\
 $hostname\
@@ -11,9 +14,6 @@ $nodejs\
 $cmd_duration $jobs $time\
 $line_break\
 $character"""
-
-[nodejs]
-format = "[$symbol($version )]($style)"
 
 [fill]
 symbol = " "
@@ -66,17 +66,12 @@ style = "yellow"
 [memory_usage]
 symbol = " "
 
-[rust]
-symbol = " "
-
 [time]
 disabled = false
 style = "bold white"
 format = "[$time]($style)"
 time_format = "%R"
 
-[custom.stunnel]
-when = "ps aux | grep stunnel | grep -v grep"
-command = "ps -o etime= -p $(ps aux | grep stunnel | grep -v grep | awk '{print $2}')"
-style = "red"
-format = "[TUNNEL OPEN for $output]($style)"
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
