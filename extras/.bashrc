@@ -22,12 +22,19 @@ PROMPT_COMMAND='history -a'
 # Allow ctrl-S for history navigation (with ctrl-R)
 [[ $- == *i* ]] && stty -ixon
 
+#######################################################
+# GENERAL ALIAS'S
+#######################################################
+# To temporarily bypass an alias, we precede the command with a \
+# EG: the ls command is aliased, but to use the normal ls command you would type \ls
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias rate-mirrors='rate-mirrors --entry-country "South Africa" --disable-comments-in-file arch --max-delay 7200 | sudo tee /etc/pacman.d/mirrorlist'
 alias nv='$EDITOR'
 alias vim='$EDITOR'
 alias vi='$EDITOR'
+alias bd='cd "$OLDPWD"'  # cd into the old directory
 alias cp='cp -i'
 alias mv='mv -i'
 alias df='df -h'    # human-readable sizes
@@ -46,6 +53,8 @@ alias rmd='/bin/rm  --recursive --force --verbose '  # Remove a directory and al
 eval "$(starship init bash)"
 # Set up fzf key bindings and fuzzy completion in bash
 eval "$(fzf --bash)"
+# Setup xoxide
+eval "$(zoxide init bash)"
 # Setup ble autocompletin n bash
 # source ~/.local/share/blesh/ble.sh
 # Run pfetch
