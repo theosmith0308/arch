@@ -46,7 +46,7 @@ history = 2000
 
 [window]
 dynamic_padding = false
-opacity = 0.95
+opacity = 1.0
 # blur = true  # Works on macOS/KDE Wayland
 title = "Alacritty"
 
