@@ -8,7 +8,7 @@ blinking = "Always"
 
 [cursor]
 blink_interval = 600
-blink_timeout = 0
+blink_timeout = 10
 unfocused_hollow = true
 #thickness = 0.15
 
@@ -22,19 +22,19 @@ draw_bold_text_with_bright_colors = true
 size = 12
 
   [font.bold]
-  family = "Source Code Pro"
+  family = "MesloLGSNerdFontMono"
   style = "Bold"
 
   [font.bold_italic]
-  family = "Source Code Pro"
+  family = "MesloLGSNerdFontMono"
   style = "Bold Italic"
 
   [font.italic]
-  family = "Source Code Pro"
+  family = "MesloLGSNerdFontMono"
   style = "Italic"
 
   [font.normal]
-  family = "Source Code Pro"
+  family = "MesloLGSNerdFontMono"
   style = "Regular"
 
   [font.offset]
@@ -42,11 +42,12 @@ size = 12
   y = 1
 
 [scrolling]
-history = 5_000
+history = 2000
 
 [window]
 dynamic_padding = false
-opacity = 0.95
+opacity = 1.0
+# blur = true  # Works on macOS/KDE Wayland
 title = "Alacritty"
 
   [window.class]

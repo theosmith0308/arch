@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Set vi mode
+# set -o vi
+
 # Define Editor
 export EDITOR=nvim
 
@@ -34,17 +37,24 @@ alias rate-mirrors='rate-mirrors --entry-country "South Africa" --disable-commen
 alias nv='$EDITOR'
 alias vim='$EDITOR'
 alias vi='$EDITOR'
+alias e='nvim '
 alias bd='cd "$OLDPWD"'  # cd into the old directory
 alias cp='cp -i'
 alias mv='mv -i'
+alias rm='trash -v'
 alias df='df -h'    # human-readable sizes
+alias lsn='lsof -i'
+alias ist='speedtest-cli'
+alias wtr='curl wttr.in/walvis+bay current'
+alias wtra='~/weather1.py current'
+alias ntrf='netstat -lantp | grep -i stab | awk -F/ "{print $2 $3}" | sort | uniq'
 alias la='exa -a --icons --group-directories-first'    # all files and dirs
 alias ll='exa -Alh --git --icons --group-directories-first'    # long format with header
 alias se='sudo -e' # sudo -e # sudoedit is the other command that can be used
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
-alias rmd='/bin/rm  --recursive --force --verbose '  # Remove a directory and all files
-alias fzp='fzf --preview="bat --color=always {}"'
-alias fzn='sudo nvim $(fzf -m --preview="bat --color=always {}")'
+alias fzf='fzf --preview="bat --color=always {}"'
+alias fzn='nvim $(fzf -m --preview="bat --color=always {}")'
+alias fzs='sudo -e $(fzf -m --preview="bat --color=always {}")'
 
 # PS1='[\u@\h \W]$ '
 # PS1='[\u@\h \W]➜ '
@@ -55,13 +65,14 @@ alias fzn='sudo nvim $(fzf -m --preview="bat --color=always {}")'
 eval "$(starship init bash)"
 # Set up fzf key bindings and fuzzy completion in bash
 eval "$(fzf --bash)"
+# Setting fzf to search by extension
+export FZF_DEFAULT_OPTS="--extended"
 # Setting fd as the default source for fzf
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --exclude ".snapshots"'
+# export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix"
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # Setup xoxide
 eval "$(zoxide init bash)"
-# Setup ble autocompletion in bash
-# source ~/.local/share/blesh/ble.sh
 # Run pfetch
 pfetch
