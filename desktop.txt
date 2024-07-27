@@ -1,0 +1,9 @@
+nano
+vim
+openssh
+htop
+wget
+wd
+wireless_tools
+smartmontools
+xdg-utils
