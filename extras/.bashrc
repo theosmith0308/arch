@@ -11,7 +11,7 @@
 # Define Editor
 export EDITOR=nvim
 
-export HISTSIZE=2000
+export HISTSIZE=5000
 export HISTFILESIZE=500
 export HISTTIMEFORMAT="%F %T" # add timestamp to history
 
@@ -39,6 +39,8 @@ alias vim='$EDITOR'
 alias vi='$EDITOR'
 alias e='nvim '
 alias bd='cd "$OLDPWD"'  # cd into the old directory
+alias chu='checkupdates'
+alias dou='sudo pacman -Syu --noconfirm'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='trash -v'
@@ -60,6 +62,15 @@ alias fzs='sudo -e $(fzf -m --preview="bat --color=always {}")'
 # PS1='[\u@\h \W]➜ '
 
 ### Bash shell integrations ###
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 # Setup starship integration in bash
 eval "$(starship init bash)"

@@ -1,0 +1,53 @@
+[Data Source]
+DisplayName=Gmail
+Enabled=true
+Parent=7cb0ca164c0977e8ac83c09ae6bf2b3d58d31981
+
+[Mail Submission]
+SentFolder=folder://local/Sent
+TransportUid=c6ec8c571e2b0afc09ea328c21e39e69a5009530
+RepliesToOriginFolder=false
+UseSentFolder=false
+
+[Mail Composition]
+Bcc=
+Cc=
+DraftsFolder=folder://c0398ae48770d4959d2750afcae742515bcd2d08/%5bGmail%5d/Drafts
+ReplyStyle=default
+SignImip=true
+TemplatesFolder=folder://local/Templates
+StartBottom=inconsistent
+TopSignature=inconsistent
+Language=
+
+[Mail Identity]
+Address=theosmith0308@gmail.com
+Aliases=
+Name=Theo Smth
+Organization=Private
+ReplyTo=theosmith0308@gmail.com
+SignatureUid=none
+
+[Pretty Good Privacy (OpenPGP)]
+AlwaysTrust=false
+EncryptToSelf=true
+KeyId=
+SigningAlgorithm=
+SignByDefault=false
+EncryptByDefault=false
+PreferInline=false
+LocateKeys=true
+SendPublicKey=true
+SendPreferEncrypt=true
+AskSendPublicKey=true
+
+[Message Disposition Notifications]
+ResponsePolicy=ask
+
+[Secure MIME (S/MIME)]
+EncryptionCertificate=
+EncryptByDefault=false
+EncryptToSelf=true
+SigningAlgorithm=
+SigningCertificate=
+SignByDefault=false

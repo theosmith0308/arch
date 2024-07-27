@@ -1,0 +1,27 @@
+[Data Source]
+DisplayName=Outlook
+Enabled=true
+Parent=a8974060d8740de1f511a4b876cac8052a3e6408
+
+[Authentication]
+Host=smtp.office365.com
+Method=Outlook
+Port=587
+ProxyUid=system-proxy
+RememberPassword=true
+User=theosmith0308@outlook.com
+CredentialName=
+IsExternal=false
+
+[Security]
+Method=starttls-on-standard-port
+
+[Mail Transport]
+BackendName=smtp
+
+[Smtp Backend]
+ReencodeData=false
+DsnRetFull=false
+DsnNotifySuccess=true
+DsnNotifyFailure=true
+DsnNotifyDelay=true

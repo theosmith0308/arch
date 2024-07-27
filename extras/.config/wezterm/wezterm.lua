@@ -3,8 +3,7 @@ local wezterm = require("wezterm")
 -- Action
 local act = wezterm.action
 -- This will hold the configuration.
-local config = {}
--- local config = wezterm.config_builder()
+local config = wezterm.config_builder()
 -- Default shell
 config.default_prog = { "/usr/bin/bash" }
 
@@ -46,7 +45,7 @@ config.colors = {
 
 -- Window size
 config.initial_cols = 100
-config.initial_rows = 24
+config.initial_rows = 25
 
 -- Scrollbar
 config.enable_scroll_bar = true
