@@ -1,0 +1,10 @@
+{
+	"font_face": "FiraCode Nerd Font Mono",
+	"font_size": 12,
+
+	"hot_exit": "disabled",
+
+	"close_windows_when_empty": true,
+	"theme": "Default Dark.sublime-theme",
+	"color_scheme": "Mariana.sublime-color-scheme",
+}

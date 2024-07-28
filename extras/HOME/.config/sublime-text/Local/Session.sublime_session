@@ -1,0 +1,902 @@
+{
+	"file_history":
+	[
+		"/home/theo/Documents/Nvim-ommands.pdf",
+		"/usr/share/gnome-shell/gnome-shell-theme.gresource",
+		"/run/media/theo/Windows-Backup/dotfiles/.bashrc",
+		"/home/theo/Downloads/bashrc",
+		"/home/theo/.local/share/themes/Pragmalin/gnome-shell/gnome-shell.css",
+		"/home/theo/Downloads/02-GNOME-4X-Blue-Dark/install.sh",
+		"/home/theo/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml",
+		"/run/media/theo/Windows-Backup/dotfiles/xfce4/xfconf/xfce-perchannel-xml/thunar.xml",
+		"/home/theo/Documents/set-alacritty-as-terminal-for-nemo.txt",
+		"/home/theo/Documents/ptyxis-arc-update-extension-command.txt",
+		"/home/theo/.config/foot/foot.ini",
+		"/run/media/theo/D8BC93C0BC939798/Stalked By My Neighbor (2015) [720p] [WEBRip] [YTS.MX]/Stalked.By.My.Neighbor.2015.720p.WEBRip.x264.AAC-[YTS.MX].srt",
+		"/home/theo/Documents/find-command.txt",
+		"/home/theo/Documents/fzf-commands.txt",
+		"/usr/share/applications/com.gexperts.Tilix.desktop",
+		"/home/theo/.local/share/nvim/lazy/lazy.nvim/.gitignore",
+		"/home/theo/.config/nvim/init.lua",
+		"/home/theo/.config/nvim/lua/custom/plugins/init.lua",
+		"/home/theo/.config/nvim/README.md",
+		"/home/theo/.config/nvim/lua/kickstart/health.lua",
+		"/usr/bin/pfetch",
+		"/home/theo/Downloads/config.jsonc",
+		"/home/theo/.config/fastfetch/config.jsonc",
+		"/home/theo/Test_File2.txt",
+		"/home/theo/.mono/registry/last-btime",
+		"/home/theo/Test_File.txt",
+		"/home/theo/Downloads/foot.ini",
+		"/home/theo/Pictures/xfce4/helpers.rc",
+		"/usr/lib/node_modules/alacritty-themes/themes/Tokyonight_Night.toml",
+		"/home/theo/Documents/gsettings-command.txt",
+		"/etc/xdg/foot/foot.ini",
+		"/usr/bin/xdg-settings",
+		"/home/theo/.config/xfce4/helpers.rc",
+		"/run/media/theo/Backup/Archbackup/Downloads/XnView/xnview.sh",
+		"/home/theo/Downloads/02-GNOME-4X-Blue-Dark/libadwaita/gtk.css",
+		"/home/theo/Downloads/Tokyonight-GTK-Theme/themes/src/sass/gnome-shell/_widgets-46-0.scss",
+		"/home/theo/.config/gtk-4.0/settings.ini",
+		"/home/theo/.config/gtk-3.0/settings.ini",
+		"/run/media/theo/Windows-Backup/dotfiles/gtk/.gtkrc-2.0",
+		"/run/media/theo/Windows-Backup/dotfiles/gtk/.Xresources",
+		"/run/media/theo/Windows-Backup/dotfiles/gtk/xsettingsd/xsettingsd.conf",
+		"/run/media/theo/Windows-Backup/.config/xsettingsd/xsettingsd.conf",
+		"/run/media/theo/Windows-Backup/.config/gtk-2.0/gtkfilechooser.ini",
+		"/home/theo/.config/alacritty/alacritty.toml",
+		"/home/theo/arch/extras/alacritty/alacritty.toml",
+		"/home/theo/.local/share/icons/default/index.theme",
+		"/run/media/theo/Windows-Backup/dotfiles/.icons/default/index.theme",
+		"/home/theo/Downloads/arch/extras/pipe.sh",
+		"/home/theo/.config/user-dirs.locale",
+		"/home/theo/.config/sublime-text/Packages/Default/Preferences.sublime-settings",
+		"/home/theo/.config/sublime-text/Packages/User/Preferences.sublime-settings",
+		"/home/theo/.ssh/id_ed25519.pub",
+		"/home/theo/.bashrc",
+		"/home/theo/.config/alacritty/README.MD",
+		"/home/theo/dotfiles/alacritty/alacritty.toml",
+		"/run/media/theo/HOME/theo/.config/alacritty/alacritty.toml",
+		"/home/theo/Documents/snapper",
+		"/home/theo/Downloads/archinstall/1-install.sh",
+		"/home/theo/Downloads/arch/2-config.sh",
+		"/home/theo/Downloads/arch/1-install.sh",
+		"/home/theo/Downloads/stepan-raabe-archinstall/2-configuration.sh",
+		"/home/theo/Downloads/stepan-raabe-archinstall/1-install.sh",
+		"/home/theo/Downloads/archinstall-main/1-install.sh",
+		"/home/theo/Downloads/arch/archinstall-preconfigured-partitions",
+		"/home/theo/Documents/Pipewire on Arch",
+		"/home/theo/Downloads/dotfiles/alacritty/alacritty.toml",
+		"/home/theo/Downloads/dotfiles/fastfetch/config.jsonc",
+		"/home/theo/Downloads/mike-dot-files/config/fish/config.fish",
+		"/home/theo/Downloads/mike-dot-files/scripts/forecast.sh",
+		"/home/theo/Downloads/mike-dot-files/scripts/weatherbar.sh",
+		"/home/theo/Downloads/mike-dot-files/scripts/weather.sh",
+		"/run/media/theo/WinBackup/dotfiles/waybar/themes/default/style.css",
+		"/home/theo/.gtkrc-2.0",
+		"/home/theo/.gitconfig",
+		"/home/theo/dotfiles/waybar/themes/glass/style.css",
+		"/home/theo/dotfiles/waybar/themes/default/style.css",
+		"/home/theo/dotfiles/scripts/updates.sh",
+		"/home/theo/dotfiles/scripts/ml4w-updates.sh",
+		"/home/theo/dotfiles/scripts/installupdates.sh",
+		"/home/theo/dotfiles/.settings/software.sh",
+		"/home/theo/dotfiles/waybar/themes/default/modules.json",
+		"/home/theo/Downloads/Hyprland-Dots/config/waybar/modules",
+		"/home/theo/dotfiles/waybar/themes/glass/modules.json",
+		"/home/theo/Downloads/jre1.7.0_80/bin/ControlPanel",
+		"/home/theo/Documents/Remedy for Cockroaches",
+		"/home/theo/dotfiles/xfce4/xfconf/xfce-perchannel-xml/thunar.xml",
+		"/home/theo/.config/gtk-4.0/gtk-Light.css",
+		"/home/theo/.themes/Tokyonight-Dark/index.theme",
+		"/home/theo/.themes/Tokyonight-Dark/gtk-4.0/gtk-dark.css",
+		"/home/theo/.themes/Jasper-Dark-Dracula/gtk-4.0/gtk-dark.css",
+		"/home/theo/dotfiles/waybar/themes/snow/modules.json",
+		"/home/theo/dotfiles/waybar/themes/snow/style.css",
+		"/home/theo/Downloads/dotfiles/waybar/themes/ml4w/style.css",
+		"/home/theo/Downloads/dotfiles/waybar/modules.json",
+		"/home/theo/Downloads/dotfiles-2.8.4/waybar/modules.json",
+		"/home/theo/dotfiles/waybar/modules.json",
+		"/home/theo/dotfiles/waybar/themes/snow/config",
+		"/home/theo/Downloads/Papirus-Nord/install",
+		"/home/theo/Downloads/Papirus-Nord/papirus-folders",
+		"/home/theo/Downloads/Papirus-Nord/papirus-folders1",
+		"/home/theo/.themes/Minwaita-Dark/gtk-3.0/gtk.css",
+		"/home/theo/.themes/Bluish-GTK/gtk-3.0/gtk.css",
+		"/usr/share/themes/Minwaita-Dark/gtk-3.0/gtk.css",
+		"/home/theo/.themes/Tokyo-Night/theme/install.sh",
+		"/home/theo/Downloads/dotfiles-2.8.4/install.sh",
+		"/home/theo/Downloads/dotfiles-2.8.4/.install/remove.sh",
+		"/home/theo/dotfiles/hypr/conf/keybindings/default.conf",
+		"/home/theo/Downloads/dotfiles/hypr/conf/keybindings/default.conf",
+		"/home/theo/dotfiles/waybar/themes/ml4w/style.css",
+		"/home/theo/dotfiles/hypr/scripts/hypridle.sh",
+		"/home/theo/Downloads/dotfiles/waybar/themes/ml4w/config",
+		"/home/theo/dotfiles/waybar/themes/default/config",
+		"/home/theo/dotfiles/hypr/scripts/stop-hypridle.sh",
+		"/home/theo/Downloads/dotfiles/.install/paralleldownloads.sh",
+		"/home/theo/Downloads/dotfiles/hypr/scripts/wallpaper.sh",
+		"/home/theo/Downloads/dotfiles/hypr/scripts/restart-hypridle.sh",
+		"/home/theo/Downloads/dotfiles/hypr/scripts/hypridle.sh",
+		"/home/theo/Downloads/dotfiles-2.8.4/.settings/wallpaper-engine.sh",
+		"/home/theo/Downloads/dotfiles-2.8.4/.install/packages/hyprland-packages.sh",
+		"/home/theo/Downloads/dotfiles-2.8.4/.install/packages/general-packages.sh",
+		"/home/theo/Downloads/ml4w-hyprland-settings/setup2.sh",
+		"/home/theo/dotfiles/hypr/scripts/wallpaper.sh",
+		"/home/theo/Documents/pkgs.txt",
+		"/home/theo/Downloads/dotfiles/.install/packages/general-packages.sh",
+		"/home/theo/Downloads/ml4w-hyprland-settings/install.sh",
+		"/home/theo/Downloads/ml4w-hyprland-settings/setup.sh",
+		"/home/theo/.config/ml4w-hyprland-settings/hyprctl.sh",
+		"/home/theo/dotfiles/hypr/conf/autostart.conf"
+	],
+	"folder_history":
+	[
+	],
+	"last_version": 4169,
+	"last_window_id": 41,
+	"log_indexing": false,
+	"next_update_check": 1721887132,
+	"settings":
+	{
+		"new_window_full_screen": false,
+		"new_window_height": 521.0,
+		"new_window_maximized": false,
+		"new_window_position":
+		[
+			35.0,
+			106.0
+		],
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"margin-",
+						"margin-left"
+					],
+					[
+						"Mar",
+						"margin-left"
+					],
+					[
+						"marg",
+						"margin-left"
+					],
+					[
+						"bo",
+						"border"
+					],
+					[
+						"paddin",
+						"padding-top"
+					],
+					[
+						"padd",
+						"padding-left"
+					],
+					[
+						"padding",
+						"padding-top"
+					],
+					[
+						"pad",
+						"padding-right"
+					],
+					[
+						"mar",
+						"margin-right"
+					],
+					[
+						"custom-",
+						"custom-system"
+					],
+					[
+						"margin",
+						"margin-left"
+					],
+					[
+						"border",
+						"border-radius"
+					],
+					[
+						"backgr",
+						"background"
+					],
+					[
+						"ico",
+						"icon-size"
+					],
+					[
+						"font",
+						"font-size"
+					],
+					[
+						"fon",
+						"font-size"
+					],
+					[
+						"bor",
+						"border-radius"
+					],
+					[
+						"pa",
+						"padding-right"
+					],
+					[
+						"padding-b",
+						"padding-bottom"
+					],
+					[
+						"r",
+						"bolder"
+					],
+					[
+						"margi",
+						"margin-left"
+					],
+					[
+						"max",
+						"max-width"
+					],
+					[
+						"b",
+						"bolder"
+					]
+				]
+			},
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/theo/Documents/Nvim-ommands.pdf",
+				"/usr/share/gnome-shell/gnome-shell-theme.gresource",
+				"/run/media/theo/Windows-Backup/dotfiles/.bashrc",
+				"/home/theo/Downloads/bashrc",
+				"/home/theo/.local/share/themes/Pragmalin/gnome-shell/gnome-shell.css",
+				"/home/theo/Downloads/02-GNOME-4X-Blue-Dark/install.sh",
+				"/home/theo/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml",
+				"/run/media/theo/Windows-Backup/dotfiles/xfce4/xfconf/xfce-perchannel-xml/thunar.xml",
+				"/home/theo/Documents/set-alacritty-as-terminal-for-nemo.txt",
+				"/home/theo/Documents/ptyxis-arc-update-extension-command.txt",
+				"/home/theo/.config/foot/foot.ini",
+				"/run/media/theo/D8BC93C0BC939798/Stalked By My Neighbor (2015) [720p] [WEBRip] [YTS.MX]/Stalked.By.My.Neighbor.2015.720p.WEBRip.x264.AAC-[YTS.MX].srt",
+				"/home/theo/Documents/find-command.txt",
+				"/home/theo/Documents/fzf-commands.txt",
+				"/usr/share/applications/com.gexperts.Tilix.desktop",
+				"/home/theo/.local/share/nvim/lazy/lazy.nvim/.gitignore",
+				"/home/theo/.config/nvim/init.lua",
+				"/home/theo/.config/nvim/lua/custom/plugins/init.lua",
+				"/home/theo/.config/nvim/README.md",
+				"/home/theo/.config/nvim/lua/kickstart/health.lua",
+				"/usr/bin/pfetch",
+				"/home/theo/Downloads/config.jsonc",
+				"/home/theo/.config/fastfetch/config.jsonc",
+				"/home/theo/Test_File2.txt",
+				"/home/theo/.mono/registry/last-btime",
+				"/home/theo/Test_File.txt",
+				"/home/theo/Downloads/foot.ini",
+				"/home/theo/Pictures/xfce4/helpers.rc",
+				"/usr/lib/node_modules/alacritty-themes/themes/Tokyonight_Night.toml",
+				"/home/theo/Documents/gsettings-command.txt",
+				"/etc/xdg/foot/foot.ini",
+				"/usr/bin/xdg-settings",
+				"/home/theo/.config/xfce4/helpers.rc",
+				"/run/media/theo/Backup/Archbackup/Downloads/XnView/xnview.sh",
+				"/home/theo/Downloads/02-GNOME-4X-Blue-Dark/libadwaita/gtk.css",
+				"/home/theo/Downloads/Tokyonight-GTK-Theme/themes/src/sass/gnome-shell/_widgets-46-0.scss",
+				"/home/theo/.config/gtk-4.0/settings.ini",
+				"/home/theo/.config/gtk-3.0/settings.ini",
+				"/run/media/theo/Windows-Backup/dotfiles/gtk/.gtkrc-2.0",
+				"/run/media/theo/Windows-Backup/dotfiles/gtk/.Xresources",
+				"/run/media/theo/Windows-Backup/dotfiles/gtk/xsettingsd/xsettingsd.conf",
+				"/run/media/theo/Windows-Backup/.config/xsettingsd/xsettingsd.conf",
+				"/run/media/theo/Windows-Backup/.config/gtk-2.0/gtkfilechooser.ini",
+				"/home/theo/.config/alacritty/alacritty.toml",
+				"/home/theo/arch/extras/alacritty/alacritty.toml",
+				"/home/theo/.local/share/icons/default/index.theme",
+				"/run/media/theo/Windows-Backup/dotfiles/.icons/default/index.theme",
+				"/home/theo/Downloads/arch/extras/pipe.sh",
+				"/home/theo/.config/user-dirs.locale",
+				"/home/theo/.ssh/id_ed25519.pub",
+				"/home/theo/.bashrc",
+				"/home/theo/.config/alacritty/README.MD",
+				"/home/theo/dotfiles/alacritty/alacritty.toml",
+				"/run/media/theo/HOME/theo/.config/alacritty/alacritty.toml",
+				"/home/theo/Documents/snapper",
+				"/home/theo/Downloads/archinstall/1-install.sh",
+				"/home/theo/Downloads/arch/2-config.sh",
+				"/home/theo/Downloads/arch/1-install.sh",
+				"/home/theo/Downloads/stepan-raabe-archinstall/2-configuration.sh",
+				"/home/theo/Downloads/stepan-raabe-archinstall/1-install.sh",
+				"/home/theo/Downloads/archinstall-main/1-install.sh",
+				"/home/theo/Downloads/arch/archinstall-preconfigured-partitions",
+				"/home/theo/Documents/Pipewire on Arch",
+				"/home/theo/Downloads/dotfiles/alacritty/alacritty.toml",
+				"/home/theo/Downloads/dotfiles/fastfetch/config.jsonc",
+				"/home/theo/Downloads/mike-dot-files/config/fish/config.fish",
+				"/home/theo/Downloads/mike-dot-files/scripts/forecast.sh",
+				"/home/theo/Downloads/mike-dot-files/scripts/weatherbar.sh",
+				"/home/theo/Downloads/mike-dot-files/scripts/weather.sh",
+				"/run/media/theo/WinBackup/dotfiles/waybar/themes/default/style.css",
+				"/home/theo/.gtkrc-2.0",
+				"/home/theo/.gitconfig",
+				"/home/theo/dotfiles/waybar/themes/glass/style.css",
+				"/home/theo/dotfiles/waybar/themes/default/style.css",
+				"/home/theo/dotfiles/scripts/updates.sh",
+				"/home/theo/dotfiles/scripts/ml4w-updates.sh",
+				"/home/theo/dotfiles/scripts/installupdates.sh",
+				"/home/theo/dotfiles/.settings/software.sh",
+				"/home/theo/dotfiles/waybar/themes/default/modules.json",
+				"/home/theo/Downloads/Hyprland-Dots/config/waybar/modules",
+				"/home/theo/dotfiles/waybar/themes/glass/modules.json",
+				"/home/theo/Downloads/jre1.7.0_80/bin/ControlPanel",
+				"/home/theo/Documents/Remedy for Cockroaches",
+				"/home/theo/dotfiles/xfce4/xfconf/xfce-perchannel-xml/thunar.xml",
+				"/home/theo/.config/gtk-4.0/gtk-Light.css",
+				"/home/theo/.themes/Tokyonight-Dark/index.theme",
+				"/home/theo/.themes/Tokyonight-Dark/gtk-4.0/gtk-dark.css",
+				"/home/theo/.themes/Jasper-Dark-Dracula/gtk-4.0/gtk-dark.css",
+				"/home/theo/dotfiles/waybar/themes/snow/modules.json",
+				"/home/theo/dotfiles/waybar/themes/snow/style.css",
+				"/home/theo/Downloads/dotfiles/waybar/themes/ml4w/style.css",
+				"/home/theo/Downloads/dotfiles/waybar/modules.json",
+				"/home/theo/Downloads/dotfiles-2.8.4/waybar/modules.json",
+				"/home/theo/dotfiles/waybar/modules.json",
+				"/home/theo/dotfiles/waybar/themes/snow/config",
+				"/home/theo/Downloads/Papirus-Nord/install",
+				"/home/theo/Downloads/Papirus-Nord/papirus-folders",
+				"/home/theo/Downloads/Papirus-Nord/papirus-folders1",
+				"/home/theo/.themes/Minwaita-Dark/gtk-3.0/gtk.css",
+				"/home/theo/.themes/Bluish-GTK/gtk-3.0/gtk.css",
+				"/usr/share/themes/Minwaita-Dark/gtk-3.0/gtk.css",
+				"/home/theo/.themes/Tokyo-Night/theme/install.sh",
+				"/home/theo/Downloads/dotfiles-2.8.4/install.sh",
+				"/home/theo/Downloads/dotfiles-2.8.4/.install/remove.sh",
+				"/home/theo/dotfiles/hypr/conf/keybindings/default.conf",
+				"/home/theo/Downloads/dotfiles/hypr/conf/keybindings/default.conf",
+				"/home/theo/dotfiles/waybar/themes/ml4w/style.css",
+				"/home/theo/dotfiles/hypr/scripts/hypridle.sh",
+				"/home/theo/Downloads/dotfiles/waybar/themes/ml4w/config",
+				"/home/theo/dotfiles/waybar/themes/default/config",
+				"/home/theo/dotfiles/hypr/scripts/stop-hypridle.sh",
+				"/home/theo/Downloads/dotfiles/.install/paralleldownloads.sh",
+				"/home/theo/Downloads/dotfiles/hypr/scripts/wallpaper.sh",
+				"/home/theo/Downloads/dotfiles/hypr/scripts/restart-hypridle.sh",
+				"/home/theo/Downloads/dotfiles/hypr/scripts/hypridle.sh",
+				"/home/theo/Downloads/dotfiles-2.8.4/.settings/wallpaper-engine.sh",
+				"/home/theo/Downloads/dotfiles-2.8.4/.install/packages/hyprland-packages.sh",
+				"/home/theo/Downloads/dotfiles-2.8.4/.install/packages/general-packages.sh",
+				"/home/theo/Downloads/ml4w-hyprland-settings/setup2.sh",
+				"/home/theo/dotfiles/hypr/scripts/wallpaper.sh",
+				"/home/theo/Documents/pkgs.txt",
+				"/home/theo/Downloads/dotfiles/.install/packages/general-packages.sh",
+				"/home/theo/Downloads/ml4w-hyprland-settings/install.sh",
+				"/home/theo/Downloads/ml4w-hyprland-settings/setup.sh",
+				"/home/theo/.config/ml4w-hyprland-settings/hyprctl.sh",
+				"/home/theo/dotfiles/hypr/conf/autostart.conf",
+				"/home/theo/Downloads/jq-req.txt",
+				"/home/theo/Downloads/dotfiles2.8.4/.install/preparation.sh"
+			],
+			"find":
+			{
+				"height": 29.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"Source Code Pro",
+					"exit",
+					"power",
+					"exit",
+					"taskbar",
+					"updates",
+					"idle",
+					"215d9c",
+					"3daee9",
+					"31455d",
+					"3daee9",
+					"taskbar",
+					"tooltip",
+					"Tooltip",
+					"idle",
+					"settings",
+					"idle",
+					"Best regards"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+					"MesloLGSNerdFontMono",
+					"31455d"
+				],
+				"reverse": false,
+				"scrollbar_highlights": true,
+				"show_context": true,
+				"use_buffer2": true,
+				"use_gitignore": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 29.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"replace":
+			{
+				"height": 54.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": false,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			}
+		},
+		"new_window_width": 934.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"margin-",
+						"margin-left"
+					],
+					[
+						"Mar",
+						"margin-left"
+					],
+					[
+						"marg",
+						"margin-left"
+					],
+					[
+						"bo",
+						"border"
+					],
+					[
+						"paddin",
+						"padding-top"
+					],
+					[
+						"padd",
+						"padding-left"
+					],
+					[
+						"padding",
+						"padding-top"
+					],
+					[
+						"pad",
+						"padding-right"
+					],
+					[
+						"mar",
+						"margin-right"
+					],
+					[
+						"custom-",
+						"custom-system"
+					],
+					[
+						"margin",
+						"margin-left"
+					],
+					[
+						"border",
+						"border-radius"
+					],
+					[
+						"backgr",
+						"background"
+					],
+					[
+						"ico",
+						"icon-size"
+					],
+					[
+						"font",
+						"font-size"
+					],
+					[
+						"fon",
+						"font-size"
+					],
+					[
+						"bor",
+						"border-radius"
+					],
+					[
+						"pa",
+						"padding-right"
+					],
+					[
+						"padding-b",
+						"padding-bottom"
+					],
+					[
+						"r",
+						"bolder"
+					],
+					[
+						"margi",
+						"margin-left"
+					],
+					[
+						"max",
+						"max-width"
+					],
+					[
+						"b",
+						"bolder"
+					]
+				]
+			},
+			"build_system": "",
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/theo/Documents/Nvim-ommands.pdf",
+				"/usr/share/gnome-shell/gnome-shell-theme.gresource",
+				"/run/media/theo/Windows-Backup/dotfiles/.bashrc",
+				"/home/theo/Downloads/bashrc",
+				"/home/theo/.local/share/themes/Pragmalin/gnome-shell/gnome-shell.css",
+				"/home/theo/Downloads/02-GNOME-4X-Blue-Dark/install.sh",
+				"/home/theo/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml",
+				"/run/media/theo/Windows-Backup/dotfiles/xfce4/xfconf/xfce-perchannel-xml/thunar.xml",
+				"/home/theo/Documents/set-alacritty-as-terminal-for-nemo.txt",
+				"/home/theo/Documents/ptyxis-arc-update-extension-command.txt",
+				"/home/theo/.config/foot/foot.ini",
+				"/run/media/theo/D8BC93C0BC939798/Stalked By My Neighbor (2015) [720p] [WEBRip] [YTS.MX]/Stalked.By.My.Neighbor.2015.720p.WEBRip.x264.AAC-[YTS.MX].srt",
+				"/home/theo/Documents/find-command.txt",
+				"/home/theo/Documents/fzf-commands.txt",
+				"/usr/share/applications/com.gexperts.Tilix.desktop",
+				"/home/theo/.local/share/nvim/lazy/lazy.nvim/.gitignore",
+				"/home/theo/.config/nvim/init.lua",
+				"/home/theo/.config/nvim/lua/custom/plugins/init.lua",
+				"/home/theo/.config/nvim/README.md",
+				"/home/theo/.config/nvim/lua/kickstart/health.lua",
+				"/usr/bin/pfetch",
+				"/home/theo/Downloads/config.jsonc",
+				"/home/theo/.config/fastfetch/config.jsonc",
+				"/home/theo/Test_File2.txt",
+				"/home/theo/.mono/registry/last-btime",
+				"/home/theo/Test_File.txt",
+				"/home/theo/Downloads/foot.ini",
+				"/home/theo/Pictures/xfce4/helpers.rc",
+				"/usr/lib/node_modules/alacritty-themes/themes/Tokyonight_Night.toml",
+				"/home/theo/Documents/gsettings-command.txt",
+				"/etc/xdg/foot/foot.ini",
+				"/usr/bin/xdg-settings",
+				"/home/theo/.config/xfce4/helpers.rc",
+				"/run/media/theo/Backup/Archbackup/Downloads/XnView/xnview.sh",
+				"/home/theo/Downloads/02-GNOME-4X-Blue-Dark/libadwaita/gtk.css",
+				"/home/theo/Downloads/Tokyonight-GTK-Theme/themes/src/sass/gnome-shell/_widgets-46-0.scss",
+				"/home/theo/.config/gtk-4.0/settings.ini",
+				"/home/theo/.config/gtk-3.0/settings.ini",
+				"/run/media/theo/Windows-Backup/dotfiles/gtk/.gtkrc-2.0",
+				"/run/media/theo/Windows-Backup/dotfiles/gtk/.Xresources",
+				"/run/media/theo/Windows-Backup/dotfiles/gtk/xsettingsd/xsettingsd.conf",
+				"/run/media/theo/Windows-Backup/.config/xsettingsd/xsettingsd.conf",
+				"/run/media/theo/Windows-Backup/.config/gtk-2.0/gtkfilechooser.ini",
+				"/home/theo/.config/alacritty/alacritty.toml",
+				"/home/theo/arch/extras/alacritty/alacritty.toml",
+				"/home/theo/.local/share/icons/default/index.theme",
+				"/run/media/theo/Windows-Backup/dotfiles/.icons/default/index.theme",
+				"/home/theo/Downloads/arch/extras/pipe.sh",
+				"/home/theo/.config/user-dirs.locale",
+				"/home/theo/.ssh/id_ed25519.pub",
+				"/home/theo/.bashrc",
+				"/home/theo/.config/alacritty/README.MD",
+				"/home/theo/dotfiles/alacritty/alacritty.toml",
+				"/run/media/theo/HOME/theo/.config/alacritty/alacritty.toml",
+				"/home/theo/Documents/snapper",
+				"/home/theo/Downloads/archinstall/1-install.sh",
+				"/home/theo/Downloads/arch/2-config.sh",
+				"/home/theo/Downloads/arch/1-install.sh",
+				"/home/theo/Downloads/stepan-raabe-archinstall/2-configuration.sh",
+				"/home/theo/Downloads/stepan-raabe-archinstall/1-install.sh",
+				"/home/theo/Downloads/archinstall-main/1-install.sh",
+				"/home/theo/Downloads/arch/archinstall-preconfigured-partitions",
+				"/home/theo/Documents/Pipewire on Arch",
+				"/home/theo/Downloads/dotfiles/alacritty/alacritty.toml",
+				"/home/theo/Downloads/dotfiles/fastfetch/config.jsonc",
+				"/home/theo/Downloads/mike-dot-files/config/fish/config.fish",
+				"/home/theo/Downloads/mike-dot-files/scripts/forecast.sh",
+				"/home/theo/Downloads/mike-dot-files/scripts/weatherbar.sh",
+				"/home/theo/Downloads/mike-dot-files/scripts/weather.sh",
+				"/run/media/theo/WinBackup/dotfiles/waybar/themes/default/style.css",
+				"/home/theo/.gtkrc-2.0",
+				"/home/theo/.gitconfig",
+				"/home/theo/dotfiles/waybar/themes/glass/style.css",
+				"/home/theo/dotfiles/waybar/themes/default/style.css",
+				"/home/theo/dotfiles/scripts/updates.sh",
+				"/home/theo/dotfiles/scripts/ml4w-updates.sh",
+				"/home/theo/dotfiles/scripts/installupdates.sh",
+				"/home/theo/dotfiles/.settings/software.sh",
+				"/home/theo/dotfiles/waybar/themes/default/modules.json",
+				"/home/theo/Downloads/Hyprland-Dots/config/waybar/modules",
+				"/home/theo/dotfiles/waybar/themes/glass/modules.json",
+				"/home/theo/Downloads/jre1.7.0_80/bin/ControlPanel",
+				"/home/theo/Documents/Remedy for Cockroaches",
+				"/home/theo/dotfiles/xfce4/xfconf/xfce-perchannel-xml/thunar.xml",
+				"/home/theo/.config/gtk-4.0/gtk-Light.css",
+				"/home/theo/.themes/Tokyonight-Dark/index.theme",
+				"/home/theo/.themes/Tokyonight-Dark/gtk-4.0/gtk-dark.css",
+				"/home/theo/.themes/Jasper-Dark-Dracula/gtk-4.0/gtk-dark.css",
+				"/home/theo/dotfiles/waybar/themes/snow/modules.json",
+				"/home/theo/dotfiles/waybar/themes/snow/style.css",
+				"/home/theo/Downloads/dotfiles/waybar/themes/ml4w/style.css",
+				"/home/theo/Downloads/dotfiles/waybar/modules.json",
+				"/home/theo/Downloads/dotfiles-2.8.4/waybar/modules.json",
+				"/home/theo/dotfiles/waybar/modules.json",
+				"/home/theo/dotfiles/waybar/themes/snow/config",
+				"/home/theo/Downloads/Papirus-Nord/install",
+				"/home/theo/Downloads/Papirus-Nord/papirus-folders",
+				"/home/theo/Downloads/Papirus-Nord/papirus-folders1",
+				"/home/theo/.themes/Minwaita-Dark/gtk-3.0/gtk.css",
+				"/home/theo/.themes/Bluish-GTK/gtk-3.0/gtk.css",
+				"/usr/share/themes/Minwaita-Dark/gtk-3.0/gtk.css",
+				"/home/theo/.themes/Tokyo-Night/theme/install.sh",
+				"/home/theo/Downloads/dotfiles-2.8.4/install.sh",
+				"/home/theo/Downloads/dotfiles-2.8.4/.install/remove.sh",
+				"/home/theo/dotfiles/hypr/conf/keybindings/default.conf",
+				"/home/theo/Downloads/dotfiles/hypr/conf/keybindings/default.conf",
+				"/home/theo/dotfiles/waybar/themes/ml4w/style.css",
+				"/home/theo/dotfiles/hypr/scripts/hypridle.sh",
+				"/home/theo/Downloads/dotfiles/waybar/themes/ml4w/config",
+				"/home/theo/dotfiles/waybar/themes/default/config",
+				"/home/theo/dotfiles/hypr/scripts/stop-hypridle.sh",
+				"/home/theo/Downloads/dotfiles/.install/paralleldownloads.sh",
+				"/home/theo/Downloads/dotfiles/hypr/scripts/wallpaper.sh",
+				"/home/theo/Downloads/dotfiles/hypr/scripts/restart-hypridle.sh",
+				"/home/theo/Downloads/dotfiles/hypr/scripts/hypridle.sh",
+				"/home/theo/Downloads/dotfiles-2.8.4/.settings/wallpaper-engine.sh",
+				"/home/theo/Downloads/dotfiles-2.8.4/.install/packages/hyprland-packages.sh",
+				"/home/theo/Downloads/dotfiles-2.8.4/.install/packages/general-packages.sh",
+				"/home/theo/Downloads/ml4w-hyprland-settings/setup2.sh",
+				"/home/theo/dotfiles/hypr/scripts/wallpaper.sh",
+				"/home/theo/Documents/pkgs.txt",
+				"/home/theo/Downloads/dotfiles/.install/packages/general-packages.sh",
+				"/home/theo/Downloads/ml4w-hyprland-settings/install.sh",
+				"/home/theo/Downloads/ml4w-hyprland-settings/setup.sh",
+				"/home/theo/.config/ml4w-hyprland-settings/hyprctl.sh",
+				"/home/theo/dotfiles/hypr/conf/autostart.conf",
+				"/home/theo/Downloads/jq-req.txt",
+				"/home/theo/Downloads/dotfiles2.8.4/.install/preparation.sh"
+			],
+			"find":
+			{
+				"height": 29.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"Source Code Pro",
+					"exit",
+					"power",
+					"exit",
+					"taskbar",
+					"updates",
+					"idle",
+					"215d9c",
+					"3daee9",
+					"31455d",
+					"3daee9",
+					"taskbar",
+					"tooltip",
+					"Tooltip",
+					"idle",
+					"settings",
+					"idle",
+					"Best regards"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+					"MesloLGSNerdFontMono",
+					"31455d"
+				],
+				"reverse": false,
+				"scrollbar_highlights": true,
+				"show_context": true,
+				"use_buffer2": true,
+				"use_gitignore": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 29.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"position": "0,0,0,0,0,35,32,969,553,1366,768,0",
+			"replace":
+			{
+				"height": 54.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"settings":
+			{
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": false,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 38
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+		]
+	}
+}

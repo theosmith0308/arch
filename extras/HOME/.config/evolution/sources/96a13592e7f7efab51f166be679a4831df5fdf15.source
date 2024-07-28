@@ -1,0 +1,53 @@
+[Data Source]
+DisplayName=ABAS
+Enabled=true
+Parent=2a79a791bedbec1604cf8656dc8f9fff7b592b3b
+
+[Mail Submission]
+SentFolder=folder://2a79a791bedbec1604cf8656dc8f9fff7b592b3b/Sent
+TransportUid=787e989507ae3323f238da7541dbb6f77de86b9f
+RepliesToOriginFolder=false
+UseSentFolder=false
+
+[Mail Composition]
+Bcc=
+Cc=
+DraftsFolder=folder://2a79a791bedbec1604cf8656dc8f9fff7b592b3b/Drafts
+ReplyStyle=default
+SignImip=true
+TemplatesFolder=folder://local/Templates
+StartBottom=inconsistent
+TopSignature=inconsistent
+Language=
+
+[Mail Identity]
+Address=abasweb@outlook.com
+Aliases=
+Name=Theo Smith
+Organization=Atomic Business Accounting Services
+ReplyTo=abasweb@outlook.com
+SignatureUid=a8b87bd952b2027bf884511eb5a1279865b2a1d3
+
+[Pretty Good Privacy (OpenPGP)]
+AlwaysTrust=false
+EncryptToSelf=true
+KeyId=
+SigningAlgorithm=
+SignByDefault=false
+EncryptByDefault=false
+PreferInline=false
+LocateKeys=true
+SendPublicKey=true
+SendPreferEncrypt=true
+AskSendPublicKey=true
+
+[Message Disposition Notifications]
+ResponsePolicy=ask
+
+[Secure MIME (S/MIME)]
+EncryptionCertificate=
+EncryptByDefault=false
+EncryptToSelf=true
+SigningAlgorithm=
+SigningCertificate=
+SignByDefault=false

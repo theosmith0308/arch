@@ -1,0 +1,27 @@
+[Data Source]
+DisplayName=Hotmail
+Enabled=true
+Parent=d0f443db51ad7d7b26bd856c274e2272529d58ef
+
+[Authentication]
+Host=smtp.office365.com
+Method=Outlook
+Port=587
+ProxyUid=system-proxy
+RememberPassword=true
+User=theosmith24@hotmail.com
+CredentialName=
+IsExternal=false
+
+[Security]
+Method=starttls-on-standard-port
+
+[Mail Transport]
+BackendName=smtp
+
+[Smtp Backend]
+ReencodeData=false
+DsnRetFull=false
+DsnNotifySuccess=true
+DsnNotifyFailure=true
+DsnNotifyDelay=true

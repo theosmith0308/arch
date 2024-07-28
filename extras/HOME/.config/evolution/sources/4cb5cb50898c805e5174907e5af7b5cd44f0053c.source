@@ -1,0 +1,7 @@
+[Data Source]
+DisplayName=ABAS
+Enabled=true
+Parent=
+
+[Mail Signature]
+MimeType=text/plain
