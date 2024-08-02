@@ -1,5 +1,4 @@
 alsa-utils
-amd-ucode
 arch-install-scripts
 archinstall
 b43-fwcutter
@@ -16,6 +15,7 @@ cryptsetup
 darkhttpd
 ddrescue
 dhclient
+dhcpcd
 diffutils
 dmidecode
 dmraid
@@ -44,7 +44,6 @@ irssi
 iw
 iwd
 jfsutils
-kitty
 kitty-terminfo
 ldns
 less
@@ -73,8 +72,6 @@ mtools
 nano
 nbd
 ndisc6
-networkmanager
-network-manager-applet
 nfs-utils
 nilfs-utils
 nmap
@@ -125,6 +122,7 @@ virtualbox-guest-utils-nox
 vpnc
 wireless-regdb
 wireless_tools
+wpa_supplicant
 wvdial
 xfsprogs
 xl2tpd
