@@ -26,13 +26,14 @@ read -p "Enter the name of the HOME partition (eg. sda3): " sda3
 # Format partitions
 # ------------------------------------------------------
 mkfs.fat -F 32 -n EFI /dev/$sda1
-mkfs.btrfs -L ROOT -f /dev/$sda2
-mkfs.btrfs -L HOME -f /dev/$sda3
+mkdir.ext4 -l BOOT /dev/$sda2
+mkfs.btrfs -L ROOT -f /dev/$sda3
+mkfs.btrfs -L HOME -f /dev/$sda4
 
 # ------------------------------------------------------
 # Mount points for btrfs
 # ------------------------------------------------------
-mount /dev/$sda2 /mnt
+mount /dev/$sda3 /mnt
 btrfs su cr /mnt/@
 btrfs su cr /mnt/@cache
 btrfs su cr /mnt/@log
@@ -40,14 +41,15 @@ btrfs su cr /mnt/@images
 btrfs su cr /mnt/@snapshots
 umount /mnt
 
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda2 /mnt
-mkdir -p /mnt/{boot,home,var/cache,var/log,var/lib/libvirt/images,.snapshots}
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@cache /dev/$sda2 /mnt/var/cache
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/$sda2 /mnt/var/log
-mount -o nodatacow,noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@images /dev/$sda2 /mnt/var/lib/libvirt/images
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/$sda2 /mnt/.snapshots
-mount /dev/$sda1 /mnt/boot
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async /dev/$sda3 /mnt/home
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda3 /mnt
+mkdir -p /mnt/{efi,home,var/cache,var/log,var/lib/libvirt/images,.snapshots}
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@cache /dev/$sda3 /mnt/var/cache
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/$sda3 /mnt/var/log
+mount -o nodatacow,noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@images /dev/$sda3 /mnt/var/lib/libvirt/images
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/$sda3 /mnt/.snapshots
+mount /dev/$sda1 /mnt/efi
+mount /dev/$sda2 /mnt/boot
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async /dev/$sda4 /mnt/home
 # mkdir /mnt/windows
 
 # ------------------------------------------------------

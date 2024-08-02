@@ -39,7 +39,7 @@ pacman -Syy
 # ------------------------------------------------------
 # Install Packages
 # ------------------------------------------------------
-pacman -S --noconfirm --needed - < pkgs-x86_64.txt
+pacman -S --noconfirm --needed - < packages-x86_64.txt
 
 # ------------------------------------------------------
 # set lang utf8 US
@@ -92,7 +92,7 @@ systemctl enable acpid
 # ------------------------------------------------------
 # Grub installation
 # ------------------------------------------------------
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch
+grub-install --target=x86_64-efi --efi-directory=/efi --boot-directory=/boot --bootloader-id=Arch
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # ------------------------------------------------------
