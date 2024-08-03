@@ -19,14 +19,15 @@ echo ""
 # ------------------------------------------------------
 lsblk
 read -p "Enter the name of the EFI partition (eg. sda1): " sda1
-read -p "Enter the name of the ROOT partition (eg. sda2): " sda2
-read -p "Enter the name of the HOME partition (eg. sda3): " sda3
+read -p "Enter the name of the BOOT partition (eg. sda2): " sda2
+read -p "Enter the name of the ROOT partition (eg. sda3): " sda3
+read -p "Enter the name of the HOME partition (eg. sda3): " sda4
 
 # ------------------------------------------------------
 # Format partitions
 # ------------------------------------------------------
 mkfs.fat -F 32 -n EFI /dev/$sda1
-mkdir.ext4 -l BOOT /dev/$sda2
+mkdir.ext4 -L BOOT /dev/$sda2
 mkfs.btrfs -L ROOT -f /dev/$sda3
 mkfs.btrfs -L HOME -f /dev/$sda4
 
@@ -41,15 +42,15 @@ btrfs su cr /mnt/@images
 btrfs su cr /mnt/@snapshots
 umount /mnt
 
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda3 /mnt
-mkdir -p /mnt/{efi,home,var/cache,var/log,var/lib/libvirt/images,.snapshots}
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@cache /dev/$sda3 /mnt/var/cache
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/$sda3 /mnt/var/log
-mount -o nodatacow,noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@images /dev/$sda3 /mnt/var/lib/libvirt/images
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/$sda3 /mnt/.snapshots
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@ /dev/$sda4 /mnt
+mkdir -p /mnt/{efi,boot,home,var/cache,var/log,var/lib/libvirt/images,.snapshots}
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@cache /dev/$sda3 /mnt/var/cache
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@log /dev/$sda3 /mnt/var/log
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@images /dev/$sda3 /mnt/var/lib/libvirt/images
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@snapshots /dev/$sda3 /mnt/.snapshots
 mount /dev/$sda1 /mnt/efi
 mount /dev/$sda2 /mnt/boot
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async /dev/$sda4 /mnt/home
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120 /dev/$sda4 /mnt/home
 # mkdir /mnt/windows
 
 # ------------------------------------------------------

@@ -1,0 +1,34 @@
+@import url("resource:///org/gnome/theme/gnome-shell.css");
+#panel {
+  background-color: rgba(18, 20, 21, 1.0);
+  /* height: 32px; */
+  /* font-size: 16px; */
+  border-radius: 10px;
+}
+
+#panelBox {
+  padding: 0.4em 0.8em;
+  background: transparent;
+}
+
+#panel .panel-button {
+  color: #e9e9ed;
+  /* color: #e9e9ed; */
+}
+
+/* workspaces indicator in activities button (45+) */
+#panel .workspace-dot {
+	background-color: rgba(233, 233, 237, 1);
+	/* border-radius: 99px; */
+}
+
+.popup-menu-content, /* popover content */
+.candidate-popup-content { /* datemenu, quick settings... */
+	background-color: rgba(18, 20, 21, 1.0);
+}
+
+.popup-menu-item, /* menu items */
+.app-menu { /* right-click (and panel) app menu */
+  background-color: rgba(18, 20, 21, 1.0);
+}
+
