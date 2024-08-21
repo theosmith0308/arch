@@ -62,5 +62,6 @@ After the installation you will find additional scripts in your home folder to i
 - zram swap file
 - timeshift snapshots
 - preload application cache
+Test
 
 
