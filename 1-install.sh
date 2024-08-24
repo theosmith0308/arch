@@ -42,7 +42,7 @@ btrfs su cr /mnt/@images
 btrfs su cr /mnt/@snapshots
 umount /mnt
 
-mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@ /dev/$sda4 /mnt
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@ /dev/$sda3 /mnt
 mkdir -p /mnt/{EFI,boot,home,var/cache,var/log,var/lib/libvirt/images,.snapshots}
 mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@cache /dev/$sda3 /mnt/var/cache
 mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@log /dev/$sda3 /mnt/var/log
