@@ -83,17 +83,23 @@ systemctl enable NetworkManager
 # systemctl enable bluetooth
 # systemctl enable cups.service
 systemctl enable sshd
-systemctl enable avahi-daemon
+# systemctl enable avahi-daemon
 # systemctl enable reflector.timer
 systemctl enable fstrim.timer
 systemctl enable firewalld
 systemctl enable acpid
+systemctl enable gdm.service
 
 # ------------------------------------------------------
 # Grub installation
 # ------------------------------------------------------
 grub-install --target=x86_64-efi --efi-directory=/efi --boot-directory=/boot --bootloader-id=Arch
 grub-mkconfig -o /boot/grub/grub.cfg
+
+# ------------------------------------------------------
+# Desktop installation
+# ------------------------------------------------------
+pacman -S gnome gnome-tweaks
 
 # ------------------------------------------------------
 # Add btrfs and setfont to mkinitcpio
@@ -117,7 +123,7 @@ sudo cp -r /archinstall/extras /home/$username/
 sudo chown -R $username /home/$username/extras/
 sudo chmod +x /home/$username/extras/*
 sudo rm -rf /archinstall/
-sudo rm /pkgs-x86_64.txt
+sudo rm /packages-x86_64.txt
 
 clear
 echo "     _                   "
