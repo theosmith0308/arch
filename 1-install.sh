@@ -29,7 +29,7 @@ read -p "Enter the name of the HOME partition (eg. sda3): " sda4
 mkfs.fat -F 32 -n EFI /dev/$sda1
 mkdir.ext4 -L BOOT /dev/$sda2
 mkfs.btrfs -L ROOT -f /dev/$sda3
-mkfs.btrfs -L HOME -f /dev/$sda4
+mkfs.ext4 -L HOME -f /dev/$sda4
 
 # ------------------------------------------------------
 # Mount points for btrfs
@@ -43,14 +43,14 @@ btrfs su cr /mnt/@snapshots
 umount /mnt
 
 mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@ /dev/$sda4 /mnt
-mkdir -p /mnt/{efi,boot,home,var/cache,var/log,var/lib/libvirt/images,.snapshots}
+mkdir -p /mnt/{EFI,boot,home,var/cache,var/log,var/lib/libvirt/images,.snapshots}
 mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@cache /dev/$sda3 /mnt/var/cache
 mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@log /dev/$sda3 /mnt/var/log
 mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@images /dev/$sda3 /mnt/var/lib/libvirt/images
 mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@snapshots /dev/$sda3 /mnt/.snapshots
-mount /dev/$sda1 /mnt/efi
+mount /dev/$sda1 /mnt/EFI
 mount /dev/$sda2 /mnt/boot
-mount -o defaults,noatime,autodefrag,compress=zstd,commit=120 /dev/$sda4 /mnt/home
+mount /dev/$sda4 /mnt/home
 # mkdir /mnt/windows
 
 # ------------------------------------------------------
@@ -68,7 +68,7 @@ pacman -S --noconfirm --needed reflector rsync
 # ------------------------------------------------------
 # Run reflector to update mirrorlist
 # ------------------------------------------------------
-reflector -c ZA -l 5 --sort rate --save /etc/pacman.d/mirrorlist
+reflector -c ZA -l 6 --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Sy
 
 # ------------------------------------------------------
@@ -97,7 +97,7 @@ cat /mnt/etc/fstab
 # ------------------------------------------------------
 mkdir /mnt/archinstall
 cp 2-config.sh /mnt/archinstall/
-cp pkgs-x86_64.txt /mnt
+cp packages-x86_64.txt /mnt
 cp -r extras /mnt/archinstall/
 
 # ------------------------------------------------------
