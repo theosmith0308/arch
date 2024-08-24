@@ -88,18 +88,18 @@ systemctl enable sshd
 systemctl enable fstrim.timer
 systemctl enable firewalld
 systemctl enable acpid
-systemctl enable gdm.service
 
 # ------------------------------------------------------
 # Grub installation
 # ------------------------------------------------------
-grub-install --target=x86_64-efi --efi-directory=/efi --boot-directory=/boot --bootloader-id=Arch
+grub-install --target=x86_64-efi --efi-directory=/EFI --boot-directory=/boot --bootloader-id=Arch
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # ------------------------------------------------------
 # Desktop installation
 # ------------------------------------------------------
 pacman -S gnome gnome-tweaks
+systemctl enable gdm.service
 
 # ------------------------------------------------------
 # Add btrfs and setfont to mkinitcpio
