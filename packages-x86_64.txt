@@ -1,3 +1,4 @@
+acpid
 alsa-utils
 arch-install-scripts
 archinstall
@@ -29,6 +30,7 @@ ethtool
 exfatprogs
 f2fs-tools
 fatresize
+firewalld
 foot-terminfo
 fsarchiver
 gnu-netcat
