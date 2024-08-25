@@ -21,20 +21,18 @@ lsblk
 read -p "Enter the name of the EFI partition (eg. sda1): " sda1
 read -p "Enter the name of the BOOT partition (eg. sda2): " sda2
 read -p "Enter the name of the ROOT partition (eg. sda3): " sda3
-read -p "Enter the name of the HOME partition (eg. sda4): " sda4
 
 # ------------------------------------------------------
 # Format partitions
 # ------------------------------------------------------
 mkfs.fat -F 32 -n EFI /dev/$sda1
-mkfs.ext4 -L BOOT /dev/$sda2
-mkfs.btrfs -L ROOT -f /dev/$sda3
-mkfs.ext4 -L HOME -f /dev/$sda4
+mkfs.btrfs -L ROOT -f /dev/$sda2
+mkfs.ext4 -L HOME -f /dev/$sda3
 
 # ------------------------------------------------------
 # Mount points for btrfs
 # ------------------------------------------------------
-mount /dev/$sda3 /mnt
+mount /dev/$sda2 /mnt
 btrfs su cr /mnt/@
 btrfs su cr /mnt/@cache
 btrfs su cr /mnt/@log
@@ -42,15 +40,14 @@ btrfs su cr /mnt/@images
 btrfs su cr /mnt/@snapshots
 umount /mnt
 
-mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@ /dev/$sda3 /mnt
-mkdir -p /mnt/{EFI,boot,home,var/cache,var/log,var/lib/libvirt/images,.snapshots}
-mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@cache /dev/$sda3 /mnt/var/cache
-mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@log /dev/$sda3 /mnt/var/log
-mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@images /dev/$sda3 /mnt/var/lib/libvirt/images
-mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@snapshots /dev/$sda3 /mnt/.snapshots
-mount /dev/$sda1 /mnt/EFI
-mount /dev/$sda2 /mnt/boot
-mount /dev/$sda4 /mnt/home
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@ /dev/$sda2 /mnt
+mkdir -p /mnt/{boot,home,var/cache,var/log,var/lib/libvirt/images,.snapshots}
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@cache /dev/$sda2 /mnt/var/cache
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@log /dev/$sda2 /mnt/var/log
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@images /dev/$sda2 /mnt/var/lib/libvirt/images
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@snapshots /dev/$sda2 /mnt/.snapshots
+mount /dev/$sda1 /mnt/boot
+mount /dev/$sda3 /mnt/home
 # mkdir /mnt/windows
 
 # ------------------------------------------------------
