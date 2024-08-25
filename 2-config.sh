@@ -96,12 +96,6 @@ grub-install --target=x86_64-efi --efi-directory=/EFI --boot-directory=/boot --b
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # ------------------------------------------------------
-# Desktop installation
-# ------------------------------------------------------
-pacman -S gnome gnome-tweaks
-systemctl enable gdm.service
-
-# ------------------------------------------------------
 # Add btrfs and setfont to mkinitcpio
 # ------------------------------------------------------
 # Before: BINARIES=() MODULES=()
@@ -115,6 +109,12 @@ mkinitcpio -p linux
 clear
 # Add sudo no password rights
 sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
+
+# ------------------------------------------------------
+# Desktop installation
+# ------------------------------------------------------
+pacman -S gnome gnome-tweaks
+systemctl enable gdm.service
 
 # ------------------------------------------------------
 # Copy installation scripts to home directory 

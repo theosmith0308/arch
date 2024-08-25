@@ -21,13 +21,13 @@ lsblk
 read -p "Enter the name of the EFI partition (eg. sda1): " sda1
 read -p "Enter the name of the BOOT partition (eg. sda2): " sda2
 read -p "Enter the name of the ROOT partition (eg. sda3): " sda3
-read -p "Enter the name of the HOME partition (eg. sda3): " sda4
+read -p "Enter the name of the HOME partition (eg. sda4): " sda4
 
 # ------------------------------------------------------
 # Format partitions
 # ------------------------------------------------------
 mkfs.fat -F 32 -n EFI /dev/$sda1
-mkdir.ext4 -L BOOT /dev/$sda2
+mkfs.ext4 -L BOOT /dev/$sda2
 mkfs.btrfs -L ROOT -f /dev/$sda3
 mkfs.ext4 -L HOME -f /dev/$sda4
 
