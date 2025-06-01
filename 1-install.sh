@@ -27,7 +27,7 @@ read -p "Enter the name of the ROOT partition (eg. sda3): " sda3
 # ------------------------------------------------------
 mkfs.fat -F 32 -n EFI /dev/$sda1
 mkfs.btrfs -L ROOT -f /dev/$sda2
-mkfs.ext4 -L HOME -f /dev/$sda3
+mkfs.ext4 -L HOME /dev/$sda3
 
 # ------------------------------------------------------
 # Mount points for btrfs
