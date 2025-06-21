@@ -52,14 +52,14 @@ btrfs su cr /mnt/@images
 btrfs su cr /mnt/@snapshots
 umount /mnt
 
-mkdir -p /mnt/archinstall
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$sda2 /mnt/archinstall
-mkdir -p /mnt/archinstall/{boot,home,var/cache,var/log,.snapshots}
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@cache /dev/$sda2 /mnt/archinstall/var/cache
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@log /dev/$sda2 /mnt/archinstall/var/log
-mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@snapshots /dev/$sda2 /mnt/archinstall/.snapshots
-mount /dev/$sda3 /mnt/archinstall/home
-mount /dev/$sda1 /mnt/archinstall/boot
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@ /dev/$sda2 /mnt
+mkdir -p /mnt/{boot,home,var/cache,var/log,var/lib/libvirt/images,.snapshots}
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@cache /dev/$sda2 /mnt/var/cache
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@log /dev/$sda2 /mnt/var/log
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@images /dev/$sda2 /mnt/var/lib/libvirt/images
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@snapshots /dev/$sda2 /mnt/.snapshots
+mount /dev/$sda1 /mnt/boot
+mount /dev/$sda3 /mnt/home
 # mount /dev/$sda1 /mnt/archinstall/boot/efi
 
 archinstall
