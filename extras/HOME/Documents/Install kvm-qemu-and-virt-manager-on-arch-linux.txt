@@ -1,0 +1,127 @@
+1. Install required packages.
+
+    sudo pacman -S qemu-full libvirt virt-install virt-manager virt-viewer edk2-ovmf swtpm qemu-img guestfs-tools libosinfo dnsmasq tuned
+
+    yay -S tuned
+
+2. To maximize KVM’s efficiency, TuneD provides pre-configured profiles for different workloads.
+
+Enable TuneD: sudo systemctl enable --now tuned
+    Check Current Profile: 
+    
+    tuned-adm active
+    
+By default, it may show as balanced. To improve VM performance, switch to the virtual-host profile:
+    List Available Profiles:    
+    
+    tuned-adm list
+    
+    Set the Virtual Host Profile: 
+    
+    sudo tuned-adm profile virtual-host
+    
+Restart the System
+
+3. Enable the Modular libvirt Daemon. Copy and paste command in terminal.
+
+    for drv in qemu interface network nodedev nwfilter secret storage; do \
+    sudo systemctl enable virt${drv}d.service; \
+    sudo systemctl enable virt${drv}d{,-ro,-admin}.socket; \
+    done
+  
+A reboot is recommended so that the KVM can properly start.
+    sudo reboot
+
+4. Give the User System-Wide Permission
+    sudo usermod -aG libvirt $USER
+    
+Define the environment variable LIBVIRT_DEFAULT_URI in the local .bashrc file of the user and then source the .bashrc file with source command.
+    echo "export LIBVIRT_DEFAULT_URI='qemu:///system'" >> ~/.bashrc
+    source ~/.bashrc
+
+Check again as a regular user to see which instance you are connected to.    
+    virsh uri
+
+5. Set ACL on the Images Directory
+First, recursively remove any existing ACL permissions on the directory.
+
+    sudo setfacl -R -b /var/lib/libvirt/images
+
+Grant regular user permission to the directory recursively.
+
+    sudo setfacl -R -m u:$USER:rwX /var/lib/libvirt/images
+    sudo setfacl -m d:u:$USER:rwx /var/lib/libvirt/images
+
+Now review your new ACL permissions on the directory.
+
+    getfacl /var/lib/libvirt/images
+    
+    SAMPLE OUTPUT:
+    getfacl: Removing leading '/' from absolute path names
+# file: var/lib/libvirt/images
+# owner: root
+# group: root
+user::rwx
+user:theo:rwx
+group::--x
+mask::rwx
+other::--x
+default:user::rwx
+default:user:theo:rwx
+default:group::--x
+default:mask::rwx
+default:other::--x
+    
+*** DONE ***                                           
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+#sudo pacman -S qemu-desktop virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat edk2-ovmf
+
+#sudo pacman -S ebtables iptables-nft
+
+sudo systemctl enable libvirtd.service
+sudo systemctl start libvirtd.service
+
+#Enable normal user account to use KVM
+sudo vim /etc/libvirt/libvirtd.conf
+
+#Set the UNIX domain socket group ownership to libvirt, (around line 85)
+unix_sock_group = "libvirt"
+
+#Set the UNIX socket permissions for the R/W socket (around line 108)
+unix_sock_rw_perms = "0770"
+
+#Add your user account to libvirt group
+sudo usermod -aG libvirt theo
+
+#Restart libvirt daemon
+sudo systemctl restart libvirtd.service
+
+#Now we need to add our user to qemu.conf. Otherwise, QEMU will give a permission denied error when trying to access local drives. You can use your favorite text editor to edit the file.
+
+sudo nano /etc/libvirt/qemu.conf
+
+Scroll down to around line 525 or search for user = "root" or group = "root". Then uncomment both entries and change the root to your user name or ID and then save and exit. Once edited it should look something like below.
+
+# Some examples of valid values are:
+#
+#       user = "qemu"   # A user named "qemu"
+#       user = "+0"     # Super user (uid=0)
+#       user = "100"    # A user named "100" or a user with uid=100
+#
+user = "your username"
+
+# The group for QEMU processes run by the system instance. It can be
+# specified in a similar way to user.
+group = "your username"
+
+#Now reboot the system.

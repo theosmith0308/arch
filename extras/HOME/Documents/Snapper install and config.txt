@@ -1,0 +1,61 @@
+sudo pacman -S --needed snapper snap-pac grub-btrfs inotify-tools btrfs-assistant
+
+# yay -S btrfs-assistant (Not needed as the packages is in default repo)
+
+*** Old ***
+##Become root
+#sudo -s
+#cd /
+
+#umount /.snapshots
+#rm -r /.snapshots
+#snapper -c root create-config /
+#btrfs subvol del /.snapshots
+#mkdir /.snapshots
+#mount -a
+
+*** End Old ***
+
+sudo snapper -c root create-config /
+sudo snapper -c root set-config ALLOW_USERS="$USER" SYNC_ACL=yes
+# Edit /etc/snapper/configs/root to your liking and set TIMELINE_CREATE='no' to disable hourly snapshots
+sudo vim /etc/updatedb.conf
+# Add .snapshots to PRUNENAMES = ".git .hg .svn .snapshots"
+# Check status and disable timeline snapshots
+sudo systemctl status snapper-timeline.timer snapper-cleanup.timer
+sudo systemctl disable --now snapper-timeline.timer snapper-cleanup.timer
+# Add overlayfs to mkinitcpio HOOKS to enable bootable snapshots
+sudo vim /etc/mkinitcpio.conf
+# Find HOOKS and add "grub-btrfs-overlayfs" at the end
+# Regenerate initramfs
+sudo mkinitcpio -P
+# Enable grub-btrfs service
+sudo systemctl enable --now grub-btrfsd.service
+sudo systemctl enable --now snapper-timeline.timer snapper-cleanup.timer
+# Check service status
+sudo systemctl status snapper-timeline.timer snapper-cleanup.timer
+sudo systemctl status grub-btrfsd.service
+# Now create a snapshot and name it
+snapper -c root create -d 'After Install'
+# Now sync with grub
+grub-mkconfig -o /efi/grub/grub.cfg
+
+# manually create pre and post snapshots
+snapper -c root create -t pre -c number -d 'pre package'
+# -c Specifies root or home 
+# -t Specifies snapshot type
+# -d Decription of snapshot
+or 
+# Create a post snapshot with corresponding pre number
+snapper -c root create -t post pre-number ? -c number -d 'pre package'
+# ? Specifies the matching pre snapshot number
+
+# Check differences between two snapshots
+sudo snapper -c root diff ?..?
+? = snapshotnumber
+
+# Undo changes between different snapshots
+sudo snapper -c root undochange ?..?
+? = snapshotnumber
+
+# When booting from a grub snapshot remember to restore the booted snapshot in btrfs assistant and update grub to sync snapshots
