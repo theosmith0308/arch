@@ -10,7 +10,6 @@ return {
 	config = function()
 		require("lualine").setup({
 			options = {
-				-- theme = "melange",
 				theme = "moonfly",
 				icons_enabled = true,
 				section_separators = { left = "", right = "" },
