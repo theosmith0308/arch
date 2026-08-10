@@ -10,7 +10,7 @@
 /****************************************************************************
  * Betterfox                                                                *
  * "Ad meliora"                                                             *
- * version: 150                                                             *
+ * version: 153                                                             *
  * url: https://github.com/yokoffing/Betterfox                              *
 ****************************************************************************/
 
@@ -20,10 +20,23 @@ user_pref("browser.cache.disk.enable", false);
 user_pref("browser.cache.memory.enable", true)
 user_pref("browser.sessionstore.interval", 600000);
 
+/** DATAREPORTING ***/
+user_pref("datareporting.healthreport.uploadEnabled", false);
+user_pref("datareporting.usage.uploadEnabled", false);
+
+/** TELEMETRY ***/
+user_pref("app.normandy.enabled", false);
+user_pref("app.normandy.first_run", false);
+user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+user_pref("browser.newtabpage.activity-stream.telemetry", false);
+
 /** UNLOAD INACTIVE TABS ***/
 user_pref("browser.tabs.unloadOnLowMemory", true);
 user_pref("browser.low_commit_space_threshold_percent", 100);
-user_pref("browser.tabs.min_inactive_duration_before_unload", 300000);
+user_pref("browser.tabs.min_inactive_duration_before_unload", 600000);
+
+/** YOUTUBE PERFORMANCE ***/
+user_pref("gfx.webrender.layer-compositor", true);
 
 /** MOZILLA UI ***/
 user_pref("browser.aboutConfig.showWarning", false);
