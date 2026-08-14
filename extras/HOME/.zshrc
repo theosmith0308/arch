@@ -17,9 +17,11 @@ bindkey -v
 
 # Aliases
 alias grep='grep --color=auto'
-alias e='nvim'
-alias se='sudo nvim'
+alias nv='nvim'
+alias snv='sudo nvim'
 alias ff='fzf --preview="bat --color=always {}"'
+alias unlock='sudo rm /var/lib/pacman/db.lck'
+alias upgrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 eval "$(starship init zsh)"
 
