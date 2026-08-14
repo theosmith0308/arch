@@ -19,8 +19,8 @@ export HISTTIMEFORMAT="%F %T" # add timestamp to history
 # To temporarily bypass an alias, we precede the command with a \
 # EG: the ls command is aliased, but to use the normal ls command you would type \ls
 
-alias e='nvim '
-alias se='sudo -e' # sudo -e # sudoedit is the other command that can be used
+alias nv='nvim '
+alias snv='sudo -e' # sudo -e # sudoedit is the other command that can be used
 alias vi='vim'
 alias svi='sudo vim'
 alias cp='cp -rpi'
