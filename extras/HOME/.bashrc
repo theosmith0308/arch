@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Use Starship.toml and source from /.config/starship.toml
+# Use Starship.toml and source from /.config/starship/starship.toml
 export STARSHIP_CONFIG="$HOME/.config/starship.toml"
 
 # Define Editor
