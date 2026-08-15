@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 # Use Starship.toml and source from /.config/starship/starship.toml
-export STARSHIP_CONFIG="$HOME/.config/starship.toml"
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 
 # Define Editor
 export EDITOR=nvim
@@ -38,7 +38,7 @@ alias pacsyu='sudo pacman -Syyu'				            # update only standard pkgs
 alias yaysua='yay -Sua --noconfirm'				            # update only AUR pkgs
 alias upgrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'	# update grub
 alias unlock='sudo rm /var/lib/pacman/db.lck'			    # remove pacman lock
-alias z='zoxide'
+# alias z='zoxide'
 alias sb='source .bashrc'
 
 # PS1='[\u@\h \W]\$ '
@@ -69,7 +69,7 @@ eval "$(starship init bash)"
 # Setup neovim integration in bash
 eval "$(fzf --bash)"
 # Setup zoxide integration in bash
-eval "$(zoxide init bash)"
+# eval "$(zoxide init bash)"
 
 # Troubleshoot Shell Keybind Clashes
 # Run bind -X | grep fzf to check if "\C-t" maps to fzf-file-widget
