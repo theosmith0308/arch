@@ -15,10 +15,17 @@ setopt HIST_FIND_NO_DUPS
 unsetopt beep
 bindkey -v
 
+# Use Starship.toml and source from /.config/starship/starship.toml
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+
 # Aliases
 alias grep='grep --color=auto'
 alias nv='nvim'
-alias snv='sudo nvim'
+alias snv='sudo -E nvim'
+alias mv='mv -i'
+alias rm='rm -i'
+alias ls='eza -a --color=auto --group-directories-first'    # Ensure "eza" is installed.
+alias ll='eza -ahl --color=auto --group-directories-first'
 alias ff='fzf --preview="bat --color=always {}"'
 alias unlock='sudo rm /var/lib/pacman/db.lck'
 alias upgrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
@@ -44,3 +51,4 @@ source /usr/share/fzf/completion.zsh
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .snapshots"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type d --hidden --strip-cwd-prefix --exclude .snapshots"
+
