@@ -27,8 +27,10 @@ alias rm='rm -i'
 alias ls='eza -a --color=auto --group-directories-first'    # Ensure "eza" is installed.
 alias ll='eza -ahl --color=auto --group-directories-first'
 alias ff='fzf --preview="bat --color=always {}"'
+alias rate-mirrors='rate-mirrors --disable-comments-in-file --entry-country=ZA --protocol=https arch --max-delay 7200 | sudo tee /etc/pacman.d/mirrorlist'
 alias unlock='sudo rm /var/lib/pacman/db.lck'
 alias upgrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias yt-dlp='yt-dlp --cookies-from-browser firefox --extractor-args "youtube:player_client=default,-android_sdkless" -f "bestvideo[height=1080]+bestaudio/best" --merge-output-format mp4'
 
 eval "$(starship init zsh)"
 
