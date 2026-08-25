@@ -1,0 +1,5 @@
+Install nautilus extension:
+yay -S nautilus-open-any-terminal
+
+Then set Kitty as default terminal with command:
+gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal kitty
