@@ -1,0 +1,10 @@
+Make changes to a extension with gsettings:
+dconf dump /org/gnome/shell/extensions/dash2dock-lite/
+dconf write /org/gnome/shell/extensions/dash2dock-lite/icon-size 0.07
+
+Set default workspaces to 2:
+gsettings set org.gnome.mutter dynamic-workspaces false
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 2
+
+Set volume overamplification:
+gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true

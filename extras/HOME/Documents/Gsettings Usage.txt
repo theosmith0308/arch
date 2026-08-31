@@ -1,0 +1,30 @@
+Show all schemas:
+gsettings list-schemas
+
+Grep a specific branch:
+gsettings list-schemas | grep org.gnome.desktop.interface
+
+Now look for keys in a branch:
+gsettings list-keys org.gnome.desktop.interface
+
+Now look for leaves in the branch:
+gsettings list-keys org.gnome.desktop.interface | grep cursor
+
+
+Core GSettings CommandsThe syntax for gsettings revolves around schemas (the folder paths grouping settings) and keys (the specific configuration parameters).
+
+List all available schemas:
+gsettings list-schemas
+
+List all keys and values in a specific schema:
+gsettings list-recursively org.gnome.desktop.interface
+
+Get the current value of a specific key:
+gsettings get org.gnome.desktop.interface gtk-theme
+
+Set a new value for a key:
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+
+Reset a key back to its system default:
+gsettings reset org.gnome.desktop.interface gtk-theme
+
