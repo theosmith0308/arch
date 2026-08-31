@@ -2,7 +2,8 @@
 
     sudo pacman -S qemu-full libvirt virt-install virt-manager virt-viewer edk2-ovmf swtpm qemu-img guestfs-tools libosinfo dnsmasq tuned
 
-    yay -S tuned
+Activate tuned:
+    sudo systemctl enable --now tuned.service
 
 2. To maximize KVM’s efficiency, TuneD provides pre-configured profiles for different workloads.
 
