@@ -24,8 +24,15 @@ alias nv='nvim'
 alias snv='sudo -E nvim'
 alias mv='mv -i'
 alias rm='rm -i'
-alias ls='eza -a --color=auto --group-directories-first'    # Ensure "eza" is installed.
-alias ll='eza -ahl --color=auto --group-directories-first'
+# Replace ls with eza
+alias ls='eza --color=always --group-directories-first --icons=always' # preferred listing
+alias la='eza -a --color=always --group-directories-first --icons=always'  # all files and dirs
+alias ll='eza -al --color=always --group-directories-first --icons=always'  # long format
+alias lt='eza -aT --color=always --group-directories-first --icons=always' # tree listing
+alias l.="eza -a | grep -e '^\.'"                                     # show only dotfiles
+
+# alias ls='eza -a --color=auto --group-directories-first'    # Ensure "eza" is installed.
+# alias ll='eza -ahl --color=auto --group-directories-first'
 alias ff='fzf --preview="bat --color=always {}"'
 alias rate-mirrors='rate-mirrors --disable-comments-in-file --entry-country=ZA --protocol=https arch --max-delay 7200 | sudo tee /etc/pacman.d/mirrorlist'
 alias unlock='sudo rm /var/lib/pacman/db.lck'
