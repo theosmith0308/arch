@@ -3,7 +3,14 @@
 add_newline = false
 
 # format = "$directory$os$git_branch$git_status$nodejs$rust$golang$php$character"
-format = "$os$directory$git_branch$git_status$nodejs$rust$golang$php$character"
+format = """
+$os$directory$git_branch$git_status$nodejs$rust$golang$php$cmd_duration
+$character"""
+
+# Configure the command duration module
+[cmd_duration]
+min_time = 2_000        # Only show if the command takes 2 seconds or longer
+format = "took [$duration](bold yellow) "
 
 [os]
 disabled = false
@@ -11,8 +18,7 @@ format = "[$symbol]($style) "
 style  = "bold blue"
 
 [os.symbols]
-# Arch    = "󰣇"
-Arch = "󰣇"
+Fedora = ""
 
 [directory]
 format            = "[$path](cyan) "
@@ -52,6 +58,8 @@ format = "[$symbol $version](purple) "
 
 [character]
 format = "$symbol "
+# success_symbol = "[➜](bold green) "
+# error_symbol = "[➜](bold red) "
 success_symbol = "[❯](bold green)"
 error_symbol = "[❯](bold red)"
 vimcmd_symbol = "[❮](bold green)"
