@@ -20,34 +20,41 @@ echo ""
 lsblk
 read -p "Enter the name of the EFI partition (eg. sda1): " sda1
 read -p "Enter the name of the BOOT partition (eg. sda2): " sda2
-read -p "Enter the name of the ROOT partition (eg. sda3): " sda3
+# read -p "Enter the name of the ROOT partition (eg. sda3): " sda3
 
 # ------------------------------------------------------
 # Format partitions
 # ------------------------------------------------------
 mkfs.fat -F 32 -n EFI /dev/$sda1
 mkfs.btrfs -L ROOT -f /dev/$sda2
-mkfs.ext4 -L HOME /dev/$sda3
+# mkfs.ext4 -L HOME /dev/$sda3
 
 # ------------------------------------------------------
 # Mount points for btrfs
 # ------------------------------------------------------
 mount /dev/$sda2 /mnt
 btrfs su cr /mnt/@
+btrfs su cr /mnt/@home
 btrfs su cr /mnt/@cache
 btrfs su cr /mnt/@log
-btrfs su cr /mnt/@images
-btrfs su cr /mnt/@snapshots
+btrfs su cr /mnt/@tmp
+btrfs su cr /mnt/@spool
+btrfs su cr /mnt/@opt
+btrfs su cr /mnt/@srv
 umount /mnt
 
 mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@ /dev/$sda2 /mnt
-mkdir -p /mnt/{boot,home,var/cache,var/log,var/lib/libvirt/images,.snapshots}
+mkdir -p /mnt/{efi,home,var/cache,var/log,var/tmp,var/spool,opt,srv}
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@home /dev/$sda2 /mnt/home
 mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@cache /dev/$sda2 /mnt/var/cache
 mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@log /dev/$sda2 /mnt/var/log
-mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@images /dev/$sda2 /mnt/var/lib/libvirt/images
-mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@snapshots /dev/$sda2 /mnt/.snapshots
-mount /dev/$sda1 /mnt/boot
-mount /dev/$sda3 /mnt/home
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@tmp /dev/$sda2 /mnt/var/tmp
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@spool /dev/$sda2 /mnt/var/spool
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@opt /dev/$sda2 /mnt/opt
+mount -o defaults,noatime,autodefrag,compress=zstd,commit=120,subvol=@srv /dev/$sda2 /mnt/srv
+
+mount /dev/$sda1 /mnt/efi
+# mount /dev/$sda3 /mnt/home
 # mkdir /mnt/windows
 
 # ------------------------------------------------------
@@ -71,17 +78,17 @@ pacman -Sy
 # ------------------------------------------------------
 # Install base packages
 # ------------------------------------------------------
-pacstrap -K /mnt base base-devel linux linux-firmware btrfs-progs intel-ucode openssh git vim pacman-contrib rsync
+pacstrap -K /mnt base base-devel linux linux-firmware btrfs-progs bash-completion grub intel-ucode git nvim plocate man-db man-pages pacman-contrib rsync
 
 # ------------------------------------------------------
 # Install boot packages
 # ------------------------------------------------------
-pacstrap -K /mnt grub os-prober efibootmgr dosfstools ntfs-3g
+pacstrap -K /mnt grub os-prober efibootmgr efitools dosfstools ntfs-3g
 
 # ------------------------------------------------------
 # Install network components
 # ------------------------------------------------------
-pacstrap -K /mnt networkmanager network-manager-applet broadcom-wl
+pacstrap -K /mnt networkmanager network-manager-applet broadcom-wl-dkms
 
 # ------------------------------------------------------
 # Generate fstab
