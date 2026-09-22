@@ -1,5 +1,5 @@
-acpid
 alsa-utils
+amd-ucode
 arch-install-scripts
 archinstall
 b43-fwcutter
@@ -8,14 +8,12 @@ bcachefs-tools
 bind
 bolt
 brltty
-broadcom-wl
 btrfs-progs
 clonezilla
 cloud-init
 cryptsetup
 darkhttpd
 ddrescue
-dhclient
 dhcpcd
 diffutils
 dmidecode
@@ -30,10 +28,9 @@ ethtool
 exfatprogs
 f2fs-tools
 fatresize
-firewalld
 foot-terminfo
 fsarchiver
-gnu-netcat
+ghostty-terminfo
 gpart
 gpm
 gptfdisk
@@ -47,6 +44,7 @@ iw
 iwd
 jfsutils
 kitty-terminfo
+kmscon-terminfo
 ldns
 less
 lftp
@@ -69,6 +67,7 @@ memtest86+-efi
 mkinitcpio
 mkinitcpio-archiso
 mkinitcpio-nfs-utils
+mmc-utils
 modemmanager
 mtools
 nano
@@ -77,7 +76,7 @@ ndisc6
 nfs-utils
 nilfs-utils
 nmap
-ntfs-3g
+ntfsprogs
 nvme-cli
 open-iscsi
 open-vm-tools
@@ -95,8 +94,6 @@ pv
 qemu-guest-agent
 refind
 reflector
-reiserfsprogs
-rp-pppoe
 rsync
 rxvt-unicode-terminfo
 screen
@@ -126,6 +123,7 @@ wireless-regdb
 wireless_tools
 wpa_supplicant
 wvdial
+xdg-utils
 xfsprogs
 xl2tpd
 zsh
