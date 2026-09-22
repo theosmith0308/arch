@@ -82,7 +82,7 @@ passwd $username
 systemctl enable NetworkManager
 # systemctl enable bluetooth
 # systemctl enable cups.service
-systemctl enable sshd
+# systemctl enable sshd
 # systemctl enable avahi-daemon
 # systemctl enable reflector.timer
 systemctl enable fstrim.timer
@@ -92,7 +92,7 @@ systemctl enable acpid
 # ------------------------------------------------------
 # Grub installation
 # ------------------------------------------------------
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch
+grub-install --target=x86_64-efi --efi-directory=/efi --boot-directory=/boot --bootloader-id=Arch
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # ------------------------------------------------------
@@ -113,7 +113,7 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 # ------------------------------------------------------
 # Desktop installation
 # ------------------------------------------------------
-pacman -S gnome gnome-tweaks
+pacman -S --needed gnome gnome-tweaks
 systemctl enable gdm.service
 
 # ------------------------------------------------------
